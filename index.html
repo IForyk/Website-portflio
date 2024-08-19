@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Rotating Cube</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            overflow: auto; /* Allow scrolling */
+            background-color: #ffca37f5; /* Light gray background for contrast */
+            font-family: 'Poiret ONe'  /* Ensure the font is applied */
+        }
+
+        .content {
+            flex: 1; /* Take up available space to push footer to the bottom */
+        }
+
+        footer {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 2500px; /* Push footer to the bottom */
+            position: relative; /* Ensure footer is positioned correctly */
+            bottom: 0;
+        }
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background-color: #ffffff;
+            color: black; /* Changed from white to ensure readability */
+            z-index: 3; /* Ensure the header is above other elements */
+            display: flex;
+            justify-content: space-between; /* Space between logo and nav */
+            align-items: center;
+            padding: 10px 20px; /* Adjusted padding for a smaller header */
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
+            height: 60px; /* Adjusted header height */
+        }
+        header .logo {
+            display: flex;
+            align-items: center; /* Center vertically */
+        }
+        header .logo img {
+            height: 80px; /* Adjust height to fit the smaller header */
+            width: auto; /* Maintain aspect ratio */
+        }
+        header nav {
+            margin-left: 0; /* Ensure navigation is aligned to the left */
+            margin-right: auto; /* Push the navigation to the left side */
+        }
+        header nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            gap: 200px; /* Space between nav items */
+            margin-left: 900px; /* Add margin to push navigation items to the right */
+        }
+        header nav ul li {
+            display: inline;
+        }
+        header nav ul li a {
+            color: black; /* Adjust text color for visibility */
+            text-decoration: none;
+            font-size: 16px; /* Font size for nav links */
+            font-weight: bold;
+            line-height: 60px; /* Center text vertically within the header */
+        }
+        canvas {
+            display: block;
+            width: 100vw;
+            height: 10vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        .content {
+            position: relative; /* Ensure content is positioned correctly */
+            z-index: 1; /* Ensure content is above the canvas */
+            margin-top: 60px; /* Ensure content is not hidden behind the fixed header */
+        }
+        .cube-text {
+    position: absolute;
+    top: 50%;
+    right: 200px; /* Adjust as needed */
+    transform: translateY(-50%);
+    z-index: 2; /* Ensure text is above the cube */
+    color: #000000;
+    font-size: 24px;
+    font-weight: bold;
+    font-family: 'Poiret One', sans-serif; /* Use the Google Font */
+}
+
+.cube-text p {
+    margin: 0; /* Remove default margin */
+    line-height: 1.2; /* Adjust line-height for tighter spacing */
+}
+.new-section {
+    display: flex; /* Use flexbox layout */
+    align-items: center; /* Center items vertically */
+    justify-content: space-between; /* Space items evenly */
+    margin: 60px auto; /* Center horizontally with auto margins */
+    padding: 40px;
+    width: 80%; /* Adjust width as needed */
+    background-color: #f8f8f8;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 1700px;
+}
+
+
+.text-container {
+    flex: 1; /* Take up available space */
+    padding-right: 20px; /* Space between text and image */
+    display: flex; /* Flexbox for vertical alignment */
+    flex-direction: column; /* Stack text elements vertically */
+    justify-content: center; /* Center text vertically */
+    margin-top: -20px;
+}
+
+.new-section h2 {
+    margin-top: -20px;
+    font-size: 48px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.new-section p {
+    font-size: 36px;
+    color: #666;
+    line-height: 1.3;
+}
+
+.image-container {
+    flex: 1; /* Take up available space */
+}
+
+.image-container img {
+    width: 100%; /* Full width of the container */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.new-section.duplicate {
+    position: absolute;
+    top: 2200px; /* Adjust this value to position the duplicate section correctly */
+    right: 150px;
+    margin: 60px auto;
+    padding: 40px;
+    width: 80%;
+    background-color: #f8f8f8;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Ensure the text container alignment is consistent */
+.new-section.duplicate .text-container {
+    padding-right: 20px;
+}
+
+/* Ensure the image container alignment is consistent */
+.new-section.duplicate .image-container {
+    flex: 1;
+}
+
+.new-section.duplicate .image-container img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+        .work-showcase {
+            position: absolute;
+            top: 3900px; /* Adjust this value as needed to place below the flower image */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%; /* Adjust width as needed */
+            display: grid;
+            grid-template-columns: repeat(3, 1fr); /* Responsive grid */
+            gap: 50px;
+            z-index: 1; /* Ensure the images are above the canvas */
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .work-showcase img {
+            width: 100%;
+            height: auto;
+            border-radius: 50px; /* Rounded corners for images */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* Subtle shadow for depth */
+            opacity: 0; /* Start hidden */
+            transform: translateY(20px); /* Initial position for animation */
+            transition: opacity 0.5s ease-in-out, transform 0.5s ease-in-out;
+        }
+        .work-showcase img.visible {
+            opacity: 1; /* Make visible */
+            transform: translateY(0); /* Reset position */
+        }
+        .overlay-text {
+            position: absolute; /* Position it absolutely relative to the viewport */
+            top: 50%; /* Center vertically */
+            left: 25%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Center text */
+            font-size: 300px; /* Adjust as needed */
+            color: #000000; /* Black color for text */
+            z-index: 2; /* Ensure text is above the canvas */
+            font-family: 'Poiret One', sans-serif; /* Set the font family */
+            font-weight: bold;
+            font-style: normal;
+        }
+        .text-top {
+            display: block; /* Make sure "Fory" is on its own line */
+            font-size: auto; /* Adjust font size as needed */
+            color: #000000; /* Black color for text */
+            margin-right: 100px;
+        }
+        .text-bottom {
+            display: block; /* Make sure "Studio" is on its own line */
+            font-size: 60px; /* Adjust font size as needed */
+            color: #000000; /* Black color for text */
+            position: relative;
+            top: -280px;
+            left: 370px;
+        }
+        /* Styles for About Me section */
+        
+        .about-me-section {
+            position: absolute; /* Ensure it's positioned correctly */
+            top: 3000px; /* Adjust this value to position it where the 3D model was */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%; /* Adjust width as needed */
+            background-color: #ffffff; /* Background color for contrast */
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+            z-index: 1; /* Ensure the section is above the canvas */
+            font-family: 'Poiret One', sans-serif; /* Set the font family */
+            font-weight: bold;
+            color: black; /* Text color */
+            display: grid;
+            grid-template-columns: 1fr 2fr; /* Two columns: one for the image, one for the text */
+            gap: 40px; /* Space between the image and the text */
+        } 
+
+        .about-me-section img {
+            width: 100%;
+            height: auto;
+            border-radius: 20px; /* Optional: rounded corners for the image */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: subtle shadow for depth */
+        }
+        .about-me-section div {
+    margin-top: -60px; /* Adjust this value to move the text higher */
+}
+        .about-me-section h2 {
+            font-size: 80px; /* Adjust as needed */
+            color: #333; /* Text color */
+            margin-bottom: 40px;
+        }
+        .about-me-section p {
+            font-size: 28px; /* Adjust as needed */
+            color: #555; /* Text color */
+            line-height: 1.6;
+        }
+        .curve {
+            position: absolute;
+            width: 100%;
+            height: 50px;
+        }
+        .curve-1 {
+            top: 600px; /* Adjust this value as needed */
+        }
+        .curve-2 {
+            top: 1000px; /* Adjust this value as needed */
+        }
+        .curve-3 {
+    position: absolute;
+    top: 2600px; /* Adjust this value as needed */
+    width: 100%;
+    height: auto;
+    z-index: 1;
+}
+.work-text {
+    position: absolute;
+    top: 3600px; /* Adjust this value to position the text correctly */
+    width: 100%;
+    text-align: center; /* Center the text */
+    z-index: 3;
+}
+
+.work-text h2 {
+    font-size: 64px; /* Adjust as needed */
+    color: #000; /* Text color */
+    font-family: 'Poiret One', sans-serif; /* Ensure the font family matches */
+    font-weight: bold;
+    margin: 0; /* Remove default margin */
+    padding: 20px 0; /* Add some padding */
+}
+.work-text a {
+    color: inherit;
+    text-decoration: none;
+    display: inline-block;
+    z-index: 3; /* Ensure the link is on top */
+}
+.what-we-do {
+    position: absolute;
+    top: 1400px; /* Adjust this value as needed */
+    width: 100%;
+    text-align: center;
+    z-index: 3;
+}
+
+.what-we-do h1 {
+    font-size: 64px; /* Adjust this value as needed */
+    color: #000; /* Black text color */
+    font-family: 'Poiret One', sans-serif;
+    font-weight: bold;
+    display: inline-block; /* Ensures the heading doesn't stretch the full width */
+    z-index: 3; /* This z-index is unnecessary for the h1 unless it's positioned */
+}
+
+
+
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Poiret+One&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="ForyNOBG.png" alt="Fory Logo">
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="portfolio.html">Work</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <canvas id="cubeCanvas"></canvas>
+
+    <div class="cube-text">
+        <p>We deliver outstanding work <p>
+        <p>and empower others to achieve greatness.</p>
+    </div>
+
+    <div class="content">
+        <!-- 3D Cube section here -->
+
+        <section class="new-section">
+            <div class="text-container">
+                <h2>Your Visuals, Our 3D Creations</h2>
+                <p>At Fory Studio, we begin by understanding your vision and needs. We then create a tailored solution and produce high-quality 3D visuals to bring your ideas to life with precision and artistry.</p>
+            </div>
+            <div class="image-container">
+                <img src="ig monitor.png" alt="Project for DialedWeb">
+            </div>
+        </section>
+
+        <section class="new-section duplicate">
+            <div class="text-container">
+                <h2>Master 3D Design with Us</h2>
+                <p>Discover how to excel in 3D design with our hands-on Blender training. We’ll guide you through advanced techniques and strategies to help you stand out in the 3D marketplace and create exceptional visual content.</p>
+            </div>
+            <div class="image-container">
+                <img src="TrunkNodes.png" alt="Visual Example">
+            </div>
+        </section>
+
+        <!-- First SVG Curve -->
+        <div class="curve curve-1">
+            <svg viewBox="0 0 1440 320">
+                <path fill="#000000" fill-opacity="1" d="M0,256L48,250.7C96,245,192,235,288,229.3C384,224,480,224,576,192C672,160,768,96,864,101.3C960,107,1056,181,1152,213.3C1248,245,1344,235,1392,229.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
+            </svg>
+        </div>
+
+        <!-- Second SVG Curve -->
+        <div class="curve curve-2">
+            <svg viewBox="0 0 1440 320">
+                <path fill="#000000" fill-opacity="1" d="M0,192L48,165.3C96,139,192,85,288,80C384,75,480,117,576,149.3C672,181,768,203,864,192C960,181,1056,139,1152,138.7C1248,139,1344,181,1392,202.7L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
+            </svg>
+        </div>
+
+        <footer>
+            <p>&copy; 2024 Fory Studio. All Rights Reserved.</p>
+        </footer>
+
+        <!-- Third SVG Curve (New Curve to separate About Me and Work Showcase sections) -->
+<div class="curve curve-3">
+    <img src="curve2.svg" alt="Curve SVG" />
+</div>
+<div class="work-text">
+    <a href="portfolio.html">
+        <h2>Work Showcase</h2>
+    </a>
+</div>
+
+<div class="what-we-do">
+    <h1>What we do</h1>
+</div>
+
+<!-- Work Showcase Section -->
+<div class="work-showcase">
+    <!-- Work showcase images here -->
+</div>
+
+    </div>
+    
+    <div class="work-showcase">
+        <img src="trunk.jpg" alt="Work 1 Description">
+        <img src="soda.jpg" alt="Work 2 Description">
+        <img src="Headphones.jpg" alt="Work 3 Description">
+        <img src="cloth.jpg" alt="Work 4 Description">
+        <img src="hydroflask.jpg" alt="Work 5 Description">
+        <img src="flower.jpg" alt="Work 6 Description">
+        <!-- Add more images as needed -->
+    </div>
+    <div class="overlay-text">
+        <span class="text-top">Fory</span>
+        <span class="text-bottom">Studio</span>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script>
+        // Basic Three.js setup
+        const scene = new THREE.Scene();
+        const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
+        const renderer = new THREE.WebGLRenderer();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(window.devicePixelRatio); // Ensure pixel ratio is correct
+        renderer.setClearColor(0xffffff); // Background color (white)
+        document.body.appendChild(renderer.domElement);
+
+        camera.position.set(0, 0, 5); // Adjusted to fit the scene better
+
+        // Add ambient light for soft illumination
+        const ambientLight = new THREE.AmbientLight(0x404040);
+        scene.add(ambientLight);
+
+        // Create a cube
+        const geometry = new THREE.BoxGeometry();
+        const material = new THREE.MeshStandardMaterial({ color: 0x7f7f7f }); // Gray color
+        const cube = new THREE.Mesh(geometry, material);
+        cube.position.set(0, 0, 0); // Center the cube
+        scene.add(cube);
+
+        // Create a new light specifically for the model
+        const modelLight = new THREE.DirectionalLight(0xffffff, 1); // Increased intensity
+        modelLight.position.set(10, 10, 10); // Adjusted position
+        scene.add(modelLight);
+
+        // Group to contain all model instances and the specific light
+        const modelGroup = new THREE.Group();
+        scene.add(modelGroup);
+
+        // Function to create a thinner grid
+        function createThinnerGrid(size, divisions) {
+            const step = size / divisions;
+            const halfSize = size / 2;
+            const vertices = []; // Initialize as an empty array
+
+            for (let i = -halfSize; i <= halfSize; i += step) {
+                vertices.push(-halfSize, 0, i, halfSize, 0, i); // Horizontal lines
+                vertices.push(i, 0, -halfSize, i, 0, halfSize); // Vertical lines
+            }
+
+            const geometry = new THREE.BufferGeometry();
+            geometry.setAttribute('position', new THREE.Float32BufferAttribute(vertices, 3));
+
+            const material = new THREE.LineBasicMaterial({
+                color: 0xcccccc, // Grid line color
+                opacity: 0.4, // Line opacity
+                transparent: true, // Enable transparency
+                linewidth: 0.5 // Line width (Note: Not all browsers support linewidth)
+            });
+
+            return new THREE.LineSegments(geometry, material);
+        }
+        const gridSize = 200;
+        const gridDivisions = 10;
+        const grid = createThinnerGrid(gridSize, gridDivisions);
+        grid.rotation.x = Math.PI / 2;
+        grid.position.z = -50;
+        scene.add(grid);
+
+        // Variables for rotation
+        let previousMouseX = window.innerWidth / 2;
+        let previousMouseY = window.innerHeight / 2;
+        const rotationSensitivity = 0.005; // Reduced sensitivity for finer control
+
+        // Mouse move event listener
+        document.addEventListener('mousemove', (event) => {
+            // Calculate the delta based on the difference from the previous mouse position
+            const deltaX = event.clientX - previousMouseX;
+            const deltaY = event.clientY - previousMouseY;
+
+            // Update rotation values based on mouse movement
+            cube.rotation.y += deltaX * rotationSensitivity;
+            cube.rotation.x += deltaY * rotationSensitivity; // Inverted to fix vertical rotation
+
+            // Update previous mouse position
+            previousMouseX = event.clientX;
+            previousMouseY = event.clientY;
+        });
+
+        // Animation loop
+        function animate() {
+            requestAnimationFrame(animate);
+
+            if (modelGroup) {
+                modelGroup.rotation.y += 0.01; // Optional: rotate model group
+            }
+
+            renderer.render(scene, camera);
+        }
+        animate();
+
+        // Adjust camera position based on scroll
+        window.addEventListener('scroll', function() {
+            const scrollY = window.scrollY;
+            camera.position.y = -scrollY / 100;
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        });
+
+        // Animation for showcase images
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('.work-showcase img');
+            
+            const options = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target); // Optional: Stop observing once visible
+                    }
+                });
+            }, options);
+            
+            images.forEach(image => {
+                observer.observe(image);
+            });
+        });
+    </script>
+</body>
+</html>
