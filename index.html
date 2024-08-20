@@ -342,9 +342,25 @@ header nav ul li a {
     display: inline-block; /* Ensures the heading doesn't stretch the full width */
     z-index: 3; /* This z-index is unnecessary for the h1 unless it's positioned */
 }
-/* Mobile Styles *//* Mobile Styles */
+/* Mobile Styles */
 @media (max-width: 1080px) {
-    /* Header */
+    /* Ensure body and html have full height */
+    html, body {
+        height: 100%;
+        margin: 0;
+    }
+
+    body {
+        display: flex;
+        flex-direction: column; /* Stack children vertically */
+    }
+
+    .wrapper {
+        flex: 1; /* Allow the wrapper to grow and push footer down */
+        display: flex;
+        flex-direction: column; /* Stack header, content, and footer vertically */
+    }
+
     header {
         flex-direction: column;
         align-items: flex-start;
@@ -391,7 +407,7 @@ header nav ul li a {
         padding: 0.625rem; /* Adjusted to rem for consistency */
         position: fixed; /* Keep the hamburger menu fixed at the corner */
         top: 1rem; /* Distance from the top of the viewport */
-        left: 1rem; /* Distance from the right edge of the viewport */
+        left: 1rem; /* Distance from the left edge of the viewport */
         z-index: 1000; /* Ensure it's above other content */
     }
 
@@ -403,11 +419,10 @@ header nav ul li a {
         margin: 0.3125rem 0; /* Adjusted to rem for consistency */
     }
 
-    /* Ensure the nav menu is positioned correctly */
     .nav-menu {
         position: fixed; /* Ensure nav menu is fixed if needed */
         top: 0; /* Align with top of the viewport */
-        left: 0; /* Align with right edge of the viewport */
+        left: 0; /* Align with left edge of the viewport */
         width: 100%; /* Full width for mobile */
         height: 100%; /* Full height for mobile */
         background: #ffffff; /* Background color */
@@ -419,23 +434,20 @@ header nav ul li a {
         display: block; /* Show menu when active */
     }
 
-    /* Canvas */
     canvas {
         height: 15vh; /* Adjust height for mobile */
     }
 
-    /* Content */
     .content {
+        flex: 1; /* Allow content to grow and fill available space */
         margin-top: 3.75rem; /* Adjusted to rem for consistency */
     }
 
-    /* Cube Text */
     .cube-text {
         font-size: 2.5rem; /* Adjusted to rem for consistency */
         right: 5%; /* Adjust position for better alignment */
     }
 
-    /* New Section */
     .new-section {
         flex-direction: column; /* Stack text and image vertically */
         width: 90%; /* Adjust width for mobile */
@@ -454,7 +466,6 @@ header nav ul li a {
         font-size: 2rem; /* Adjusted to rem for consistency */
     }
 
-    /* Duplicate New Section */
     .new-section.duplicate {
         margin-top: 20%; /* Adjust margin for better spacing */
         width: 90%; /* Adjust width for mobile */
@@ -476,7 +487,6 @@ header nav ul li a {
         height: auto; /* Maintain aspect ratio */
     }
 
-    /* Work Showcase */
     .work-showcase {
         grid-template-columns: 1fr; /* Stack images vertically on small screens */
         gap: 5%; /* Adjust gap for mobile */
@@ -492,7 +502,6 @@ header nav ul li a {
         transform: none; /* Reset transform */
     }
 
-    /* Overlay Text */
     .overlay-text {
         font-size: 6rem; /* Adjusted to rem for consistency */
         left: 50%; /* Adjust position */
@@ -510,7 +519,6 @@ header nav ul li a {
         left: 0; /* Reset left position */
     }
 
-    /* About Me Section */
     .about-me-section {
         width: 90%; /* Adjust width for mobile */
         grid-template-columns: 1fr; /* Stack image and text vertically */
@@ -533,7 +541,6 @@ header nav ul li a {
         font-size: 2rem; /* Adjusted to rem for consistency */
     }
 
-    /* What We Do */
     .what-we-do {
         top: 62.5rem; /* Adjusted to rem for consistency */
         text-align: center; /* Center the text */
@@ -543,13 +550,11 @@ header nav ul li a {
         font-size: 4rem; /* Adjusted to rem for consistency */
     }
 
-    /* Curves */
     .curve, .curve-1, .curve-2, .curve-3 {
         height: auto; /* Adjust height for mobile */
         width: 100%; /* Adjust width for mobile */
     }
 
-    /* Work Text */
     .work-text {
         top: 187.5rem; /* Adjusted to rem for consistency */
         text-align: center; /* Center the text */
@@ -561,7 +566,7 @@ header nav ul li a {
 
     /* Footer */
     footer {
-        width: 100%; /* Full width for mobile */
+        width: 100%; /* Full width for footer */
         padding: 1.25rem; /* Adjusted to rem for consistency */
         background-color: #f1f1f1; /* Adjust background color if needed */
         text-align: center; /* Center text in footer */
@@ -575,6 +580,8 @@ header nav ul li a {
         color: #333; /* Text color */
     }
 }
+
+
 
 
 
