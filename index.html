@@ -371,16 +371,16 @@ header nav ul li a {
     }
 
     header {
-        z-index: 10;
-        filter: invert(1);
-        background-color: #ffffff; /* Set the header background to white */
-        color: #000000; /* Ensure any text inside the header is black */
-        flex-direction: column;
-        align-items: center; /* Center align items */
-        padding: 1rem 2%;
-        height: auto;
-        box-sizing: border-box;
-    }
+    z-index: 10;
+    background-color: #ffffff;
+    color: #000000;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 2%;
+    height: auto;
+    box-sizing: border-box;
+    position: relative; /* Ensure the z-index works by setting a position */
+}
 
     header .logo {
         display: flex;
@@ -441,19 +441,19 @@ header nav ul li a {
     }
 
     .nav-menu {
-        position: fixed; /* Ensure nav menu is fixed if needed */
-        top: 0; /* Align with top of the viewport */
-        left: 0; /* Align with left edge of the viewport */
-        width: 100%; /* Full width for mobile */
-        height: 100%; /* Full height for mobile */
-        background: #ffffff; /* Background color */
-        z-index: 999; /* Ensure it's above other content */
-        display: none; /* Hidden by default */
-    }
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    z-index: 9999; /* Set a high z-index to ensure it's above all other elements */
+    display: none;
+}
 
-    .nav-menu.active {
-        display: block; /* Show menu when active */
-    }
+.nav-menu.active {
+    display: block;
+}
 
     canvas {
         height: 15vh; /* Adjust height for mobile */
