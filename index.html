@@ -342,35 +342,38 @@ header nav ul li a {
     display: inline-block; /* Ensures the heading doesn't stretch the full width */
     z-index: 3; /* This z-index is unnecessary for the h1 unless it's positioned */
 }
-/* Mobile Styles */
+/* Mobile Styles *//* Mobile Styles */
 @media (max-width: 1080px) {
     /* Header */
     header {
-        height: auto; /* Adjust height for mobile */
+        height: auto; /* Allow the header to adjust height based on content */
+        padding: 10px 2%; /* Adjust padding for mobile */
         flex-direction: column; /* Stack items vertically */
-        padding: 1% 2%; /* Adjust padding for mobile */
+        box-shadow: none; /* Remove shadow if it feels too heavy on mobile */
+    }
+
+    header .logo {
+        margin-bottom: 10px; /* Add space below the logo */
     }
 
     header .logo img {
         height: auto; /* Maintain aspect ratio */
         max-height: 40px; /* Set a maximum height for the logo */
         width: auto; /* Maintain aspect ratio */
-        max-width: 100%; /* Ensure it doesn't exceed the header width */
     }
 
     header nav {
-        margin-right: 0; /* Remove margin on mobile */
-        margin-top: 10%; /* Add space between logo and nav */
+        margin: 10px 0; /* Adjust margin around the nav */
     }
 
     header nav ul {
         flex-direction: column; /* Stack navigation items vertically */
-        gap: 10%; /* Adjust space between items */
+        gap: 10px; /* Adjust space between items */
     }
 
     header nav ul li a {
         font-size: 4vw; /* Increase font size for better readability */
-        line-height: normal; /* Adjust line height */
+        line-height: normal; /* Adjust line height if needed */
     }
 
     /* Canvas */
