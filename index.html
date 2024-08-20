@@ -372,51 +372,51 @@ header nav ul li a {
 
     header {
     z-index: 10;
-    background-color: #ffffff;
+    background-color: #ffffff; /* White background */
     flex-direction: column;
     align-items: center;
     padding: 1rem 2%;
     height: auto;
     box-sizing: border-box;
-    position: relative; /* Ensure the z-index works by setting a position */
+    position: relative;
 }
 
-    header .logo {
-        display: flex;
-        justify-content: center;
-        width: 100%; /* Ensure the logo container takes up full width */
-    }
+header .logo {
+    display: flex;
+    justify-content: center;
+    width: 100%; /* Ensure the logo container takes up full width */
+}
 
-    header .logo img {
-        height: 2.5rem; /* Adjust the logo size */
-        filter: invert(1); /* No color inversion */
-    }
+header .logo img {
+    height: 2.5rem; /* Adjust the logo size */
+    filter: invert(0); /* No inversion by default */
+}
 
-    header nav {
-        display: none; /* Hide default nav menu */
-        width: 100%; /* Full width for mobile */
-        margin: 0;
-        position: static;
-        box-shadow: none;
-        background-color: #dfdfdf;
-    }
+header nav {
+    display: none; /* Hide default nav menu */
+    width: 100%; /* Full width for mobile */
+    margin: 0;
+    position: static;
+    box-shadow: none;
+    background-color: #dfdfdf; /* Light gray background */
+}
 
-    header nav ul {
-        display: block; /* Stack nav items vertically */
-        width: 100%; /* Full width */
-    }
+header nav ul {
+    display: block; /* Stack nav items vertically */
+    width: 100%; /* Full width */
+}
 
-    header nav ul li {
-        border-bottom: 1px solid #d8d8d8; /* Add border between items */
-    }
+header nav ul li {
+    border-bottom: 1px solid #d8d8d8; /* Border between items */
+}
 
-    header nav ul li a {
-        display: block;
-        padding: 1rem;
-        font-size: 1.125rem;
-        color: #eeeeee; /* Ensure the text color is black */
-        text-align: center; /* Center text */
-    }
+header nav ul li a {
+    display: block;
+    padding: 1rem;
+    font-size: 1.125rem;
+    color: #eeeeee; /* Light text color */
+    text-align: center; /* Center text */
+}
 
     .hamburger-menu {
         display: block; /* Show hamburger menu button */
