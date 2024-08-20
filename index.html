@@ -344,66 +344,67 @@ header nav ul li a {
 }
 /* Mobile Styles *//* Mobile Styles */
 @media (max-width: 1080px) {
-            header {
-                flex-direction: column;
-                align-items: flex-start;
-                padding: 10px 2%;
-                height: auto;
-                box-sizing: border-box;
-            }
+    /* Header */
+    header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 1rem 2%; /* Adjusted to rem for consistency */
+        height: auto;
+        box-sizing: border-box;
+    }
 
-            header .logo img {
-                height: 40px; /* Adjust logo size */
-            }
+    header .logo img {
+        height: 2.5rem; /* Adjusted to rem for consistency */
+    }
 
-            header nav {
-                display: none; /* Hide default nav menu */
-                width: 100%; /* Full width for mobile */
-                margin: 0; /* Remove margin */
-                position: static; /* Reset position */
-                box-shadow: none; /* Remove box shadow */
-                background-color: #ffffff;
-            }
+    header nav {
+        display: none; /* Hide default nav menu */
+        width: 100%; /* Full width for mobile */
+        margin: 0; /* Remove margin */
+        position: static; /* Reset position */
+        box-shadow: none; /* Remove box shadow */
+        background-color: #ffffff;
+    }
 
-            header nav ul {
-                display: block; /* Stack nav items vertically */
-                width: 100%; /* Full width */
-            }
+    header nav ul {
+        display: block; /* Stack nav items vertically */
+        width: 100%; /* Full width */
+    }
 
-            header nav ul li {
-                border-bottom: 1px solid #ddd; /* Add border between items */
-            }
+    header nav ul li {
+        border-bottom: 1px solid #ddd; /* Add border between items */
+    }
 
-            header nav ul li a {
-                display: block;
-                padding: 15px;
-                font-size: 18px; /* Adjust font size */
-                color: black;
-                text-align: center; /* Center text */
-            }
+    header nav ul li a {
+        display: block;
+        padding: 1rem; /* Adjusted to rem for consistency */
+        font-size: 1.125rem; /* Adjusted to rem for consistency */
+        color: black;
+        text-align: center; /* Center text */
+    }
 
-            .hamburger-menu {
-                display: block; /* Show hamburger menu button */
-                background: none;
-                border: none;
-                cursor: pointer;
-                padding: 10px;
-                position: absolute;
-                top: 10px;
-                right: 10px;
-            }
+    .hamburger-menu {
+        display: block; /* Show hamburger menu button */
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.625rem; /* Adjusted to rem for consistency */
+        position: absolute;
+        top: 1rem; /* Adjusted to rem for consistency */
+        right: 1rem; /* Adjusted to rem for consistency */
+    }
 
-            .hamburger-menu .bar {
-                display: block;
-                width: 30px;
-                height: 3px;
-                background-color: black;
-                margin: 5px 0;
-            }
+    .hamburger-menu .bar {
+        display: block;
+        width: 1.875rem; /* Adjusted to rem for consistency */
+        height: 0.1875rem; /* Adjusted to rem for consistency */
+        background-color: black;
+        margin: 0.3125rem 0; /* Adjusted to rem for consistency */
+    }
 
-            .nav-menu.active {
-                display: block; /* Show menu when active */
-            }
+    .nav-menu.active {
+        display: block; /* Show menu when active */
+    }
 
     /* Canvas */
     canvas {
@@ -412,12 +413,12 @@ header nav ul li a {
 
     /* Content */
     .content {
-        margin-top: 60px; /* Ensure content is not hidden behind the fixed header */
+        margin-top: 3.75rem; /* Adjusted to rem for consistency */
     }
 
     /* Cube Text */
     .cube-text {
-        font-size: 4vw; /* Adjust font size for mobile */
+        font-size: 2.5rem; /* Adjusted to rem for consistency */
         right: 5%; /* Adjust position for better alignment */
     }
 
@@ -426,18 +427,18 @@ header nav ul li a {
         flex-direction: column; /* Stack text and image vertically */
         width: 90%; /* Adjust width for mobile */
         margin-top: 20%; /* Adjust margin for better spacing */
-        padding: 20px; /* Adjust padding */
+        padding: 1.25rem; /* Adjusted to rem for consistency */
         background-color: #f8f8f8; /* Maintain background color */
-        border-radius: 20px; /* Maintain border radius */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Maintain box shadow */
+        border-radius: 1.25rem; /* Adjusted to rem for consistency */
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Adjusted to rem for consistency */
     }
 
     .new-section h2 {
-        font-size: 5vw; /* Adjust font size for mobile */
+        font-size: 2.5rem; /* Adjusted to rem for consistency */
     }
 
     .new-section p {
-        font-size: 4vw; /* Adjust font size for mobile */
+        font-size: 2rem; /* Adjusted to rem for consistency */
     }
 
     /* Duplicate New Section */
@@ -445,8 +446,8 @@ header nav ul li a {
         margin-top: 20%; /* Adjust margin for better spacing */
         width: 90%; /* Adjust width for mobile */
         background-color: #f8f8f8; /* Maintain background color */
-        border-radius: 20px; /* Maintain border radius */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Maintain box shadow */
+        border-radius: 1.25rem; /* Adjusted to rem for consistency */
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Adjusted to rem for consistency */
     }
 
     .new-section.duplicate .text-container {
@@ -465,32 +466,32 @@ header nav ul li a {
     /* Work Showcase */
     .work-showcase {
         grid-template-columns: 1fr; /* Stack images vertically on small screens */
-        gap: 10%; /* Adjust gap for mobile */
+        gap: 5%; /* Adjust gap for mobile */
         top: auto; /* Reset top position */
         transform: none; /* Reset transform */
     }
 
     .work-showcase img {
         height: auto; /* Adjust image height for mobile */
-        border-radius: 50px; /* Maintain border radius */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* Maintain box shadow */
+        border-radius: 1.25rem; /* Adjusted to rem for consistency */
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Adjusted to rem for consistency */
         opacity: 1; /* Ensure images are visible */
         transform: none; /* Reset transform */
     }
 
     /* Overlay Text */
     .overlay-text {
-        font-size: 8vw; /* Adjust font size for mobile */
+        font-size: 6rem; /* Adjusted to rem for consistency */
         left: 50%; /* Adjust position */
     }
 
     .text-top {
-        font-size: 4vw; /* Adjust font size for mobile */
+        font-size: 3rem; /* Adjusted to rem for consistency */
         margin-right: 0; /* Reset margin for mobile */
     }
 
     .text-bottom {
-        font-size: 5vw; /* Adjust font size for mobile */
+        font-size: 4rem; /* Adjusted to rem for consistency */
         position: relative;
         top: 0; /* Reset top position */
         left: 0; /* Reset left position */
@@ -500,10 +501,10 @@ header nav ul li a {
     .about-me-section {
         width: 90%; /* Adjust width for mobile */
         grid-template-columns: 1fr; /* Stack image and text vertically */
-        padding: 20px; /* Adjust padding */
+        padding: 1.25rem; /* Adjusted to rem for consistency */
         background-color: #ffffff; /* Maintain background color */
-        border-radius: 20px; /* Maintain border radius */
-        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Maintain box shadow */
+        border-radius: 1.25rem; /* Adjusted to rem for consistency */
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Adjusted to rem for consistency */
     }
 
     .about-me-section img {
@@ -512,21 +513,21 @@ header nav ul li a {
     }
 
     .about-me-section h2 {
-        font-size: 5vw; /* Adjust font size for mobile */
+        font-size: 2.5rem; /* Adjusted to rem for consistency */
     }
 
     .about-me-section p {
-        font-size: 4vw; /* Adjust font size for mobile */
+        font-size: 2rem; /* Adjusted to rem for consistency */
     }
 
     /* What We Do */
     .what-we-do {
-        top: 1000px; /* Adjust top position for mobile */
+        top: 62.5rem; /* Adjusted to rem for consistency */
         text-align: center; /* Center the text */
     }
 
     .what-we-do h1 {
-        font-size: 6vw; /* Adjust font size for mobile */
+        font-size: 4rem; /* Adjusted to rem for consistency */
     }
 
     /* Curves */
@@ -537,14 +538,15 @@ header nav ul li a {
 
     /* Work Text */
     .work-text {
-        top: 3000px; /* Adjust top position for better alignment */
+        top: 187.5rem; /* Adjusted to rem for consistency */
         text-align: center; /* Center the text */
     }
 
     .work-text h2 {
-        font-size: 4vw; /* Adjust font size for mobile */
+        font-size: 2.5rem; /* Adjusted to rem for consistency */
     }
 }
+
 
 
     </style>
