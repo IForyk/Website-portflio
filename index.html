@@ -378,10 +378,15 @@ header nav ul li a {
         box-sizing: border-box;
     }
 
-    header .logo img {
-        height: 2.5rem; /* Adjusted to rem for consistency */
+    header .logo {
+        display: flex;
+        justify-content: center;
+        width: 100%; /* Ensure the logo container takes up full width */
     }
 
+    header .logo img {
+        height: 2.5rem; /* Adjust the logo size */
+    }
     header nav {
         display: none; /* Hide default nav menu */
         width: 100%; /* Full width for mobile */
