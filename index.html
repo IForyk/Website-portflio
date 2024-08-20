@@ -371,6 +371,7 @@ header nav ul li a {
     }
 
     header {
+        filter: invert(1);
         background-color: #ffffff; /* Set the header background to white */
         color: #000000; /* Ensure any text inside the header is black */
         flex-direction: column;
@@ -389,11 +390,9 @@ header nav ul li a {
     header .logo img {
         height: 2.5rem; /* Adjust the logo size */
         /* If the logo is an SVG or you want to change its color via CSS, use this: */
-        filter: invert(1); /* Invert the image colors if it's black on white */
     }
 
     header nav {
-        filter: invert(1);
         display: none; /* Hide default nav menu */
         width: 100%; /* Full width for mobile */
         margin: 0;
@@ -408,7 +407,7 @@ header nav ul li a {
     }
 
     header nav ul li {
-        border-bottom: 1px solid #ddd; /* Add border between items */
+        border-bottom: 1px solid #d8d8d8; /* Add border between items */
     }
 
     header nav ul li a {
