@@ -726,14 +726,75 @@ header nav ul li a {
         const ambientLight = new THREE.AmbientLight(0x404040);
         scene.add(ambientLight);
 
-        if (window.innerWidth > 1080) {
-    // Create a cube only if the screen width is greater than 1080px
+        let cube;
+let controls;
+
+function addCube() {
     const geometry = new THREE.BoxGeometry();
     const material = new THREE.MeshStandardMaterial({ color: 0x7f7f7f }); // Gray color
-    const cube = new THREE.Mesh(geometry, material);
+    cube = new THREE.Mesh(geometry, material);
     cube.position.set(0, 0, 0); // Center the cube
     scene.add(cube);
+
+    // Ensure the camera and controls are correctly set up
+    setupCameraAndControls();
 }
+
+function removeCube() {
+    if (cube) {
+        scene.remove(cube);
+        cube.geometry.dispose(); // Dispose of the geometry to free up memory
+        cube.material.dispose(); // Dispose of the material
+        cube = null; // Clear the reference
+    }
+}
+
+function setupCameraAndControls() {
+    // Set up the camera if it's not already done
+    if (!camera) {
+        camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+        camera.position.z = 5;
+    }
+
+    // Set up controls if not already done
+    if (!controls) {
+        controls = new THREE.OrbitControls(camera, renderer.domElement);
+        controls.enableDamping = true; // Enable smooth rotation
+        controls.dampingFactor = 0.05; // Adjust damping
+        controls.screenSpacePanning = false;
+        controls.maxPolarAngle = Math.PI / 2; // Limit vertical rotation
+    }
+
+    // Update controls if necessary
+    controls.update();
+}
+
+function handleResize() {
+    if (window.innerWidth > 1080) {
+        if (!cube) {
+            addCube(); // Add the cube if it's not already added
+        }
+    } else {
+        removeCube(); // Remove the cube if the screen is smaller than 1080px
+    }
+
+    // Adjust camera aspect ratio and renderer size
+    camera.aspect = window.innerWidth / window.innerHeight;
+    camera.updateProjectionMatrix();
+    renderer.setSize(window.innerWidth, window.innerHeight);
+}
+
+// Initial check on page load
+if (window.innerWidth > 1080) {
+    addCube();
+}
+
+// Add an event listener to handle screen resizing
+window.addEventListener('resize', handleResize);
+
+// Initial call to setup controls
+setupCameraAndControls();
+
 
         // Create a new light specifically for the model
         const modelLight = new THREE.DirectionalLight(0xffffff, 1); // Increased intensity
