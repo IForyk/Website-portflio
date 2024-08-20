@@ -354,9 +354,15 @@ header nav ul li a {
     }
 
     body {
-        display: flex;
-        flex-direction: column; /* Stack children vertically */
-    }
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+    margin: 0;
+}
+
+.main-content {
+    flex: 1; /* Takes up the remaining space */
+}
 
     .wrapper {
         flex: 1; /* Allow the wrapper to grow and push footer down */
@@ -568,14 +574,13 @@ header nav ul li a {
     }
 
     /* Footer */
-    footer {
-        width: 100%; /* Full width for footer */
-        padding: 1.25rem; /* Adjusted to rem for consistency */
-        background-color: #f1f1f1; /* Adjust background color if needed */
-        text-align: center; /* Center text in footer */
-        position: relative; /* Ensure footer is positioned relative to its container */
-        box-shadow: 0 -0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Optional box shadow */
-    }
+    .footer {
+    background-color: #f8f8f8; /* Footer background color */
+    padding: 1rem; /* Adjust padding */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
 
     footer p {
         font-size: 1rem; /* Adjusted to rem for consistency */
