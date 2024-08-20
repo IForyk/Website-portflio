@@ -344,37 +344,66 @@ header nav ul li a {
 }
 /* Mobile Styles *//* Mobile Styles */
 @media (max-width: 1080px) {
-    /* Header */
-    header {
-        height: auto; /* Allow the header to adjust height based on content */
-        padding: 10px 2%; /* Adjust padding for mobile */
-        flex-direction: column; /* Stack items vertically */
-        box-shadow: none; /* Remove shadow if it feels too heavy on mobile */
-    }
+            header {
+                flex-direction: column;
+                align-items: flex-start;
+                padding: 10px 2%;
+                height: auto;
+                box-sizing: border-box;
+            }
 
-    header .logo {
-        margin-bottom: 10px; /* Add space below the logo */
-    }
+            header .logo img {
+                height: 40px; /* Adjust logo size */
+            }
 
-    header .logo img {
-        height: auto; /* Maintain aspect ratio */
-        max-height: 40px; /* Set a maximum height for the logo */
-        width: auto; /* Maintain aspect ratio */
-    }
+            header nav {
+                display: none; /* Hide default nav menu */
+                width: 100%; /* Full width for mobile */
+                margin: 0; /* Remove margin */
+                position: static; /* Reset position */
+                box-shadow: none; /* Remove box shadow */
+                background-color: #ffffff;
+            }
 
-    header nav {
-        margin: 10px 0; /* Adjust margin around the nav */
-    }
+            header nav ul {
+                display: block; /* Stack nav items vertically */
+                width: 100%; /* Full width */
+            }
 
-    header nav ul {
-        flex-direction: column; /* Stack navigation items vertically */
-        gap: 10px; /* Adjust space between items */
-    }
+            header nav ul li {
+                border-bottom: 1px solid #ddd; /* Add border between items */
+            }
 
-    header nav ul li a {
-        font-size: 4vw; /* Increase font size for better readability */
-        line-height: normal; /* Adjust line height if needed */
-    }
+            header nav ul li a {
+                display: block;
+                padding: 15px;
+                font-size: 18px; /* Adjust font size */
+                color: black;
+                text-align: center; /* Center text */
+            }
+
+            .hamburger-menu {
+                display: block; /* Show hamburger menu button */
+                background: none;
+                border: none;
+                cursor: pointer;
+                padding: 10px;
+                position: absolute;
+                top: 10px;
+                right: 10px;
+            }
+
+            .hamburger-menu .bar {
+                display: block;
+                width: 30px;
+                height: 3px;
+                background-color: black;
+                margin: 5px 0;
+            }
+
+            .nav-menu.active {
+                display: block; /* Show menu when active */
+            }
 
     /* Canvas */
     canvas {
@@ -528,7 +557,12 @@ header nav ul li a {
         <div class="logo">
             <img src="ForyNOBG.png" alt="Fory Logo">
         </div>
-        <nav>
+        <button class="hamburger-menu">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </button>
+        <nav class="nav-menu">
             <ul>
                 <li><a href="index.html">Home</a></li>
                 <li><a href="about.html">About</a></li>
@@ -541,7 +575,7 @@ header nav ul li a {
     <canvas id="cubeCanvas"></canvas>
 
     <div class="cube-text">
-        <p>We deliver outstanding work <p>
+        <p>We deliver outstanding work</p>
         <p>and empower others to achieve greatness.</p>
     </div>
 
@@ -587,41 +621,47 @@ header nav ul li a {
         </footer>
 
         <!-- Third SVG Curve (New Curve to separate About Me and Work Showcase sections) -->
-<div class="curve curve-3">
-    <img src="curve2.svg" alt="Curve SVG" />
-</div>
-<div class="work-text">
-    <a href="portfolio.html">
-        <h2>Work Showcase</h2>
-    </a>
-</div>
+        <div class="curve curve-3">
+            <img src="curve2.svg" alt="Curve SVG" />
+        </div>
+        <div class="work-text">
+            <a href="portfolio.html">
+                <h2>Work Showcase</h2>
+            </a>
+        </div>
 
-<div class="what-we-do">
-    <h1>What we do</h1>
-</div>
+        <div class="what-we-do">
+            <h1>What we do</h1>
+        </div>
 
-<!-- Work Showcase Section -->
-<div class="work-showcase">
-    <!-- Work showcase images here -->
-</div>
-
-    </div>
-    
-    <div class="work-showcase">
-        <img src="trunk.jpg" alt="Work 1 Description">
-        <img src="soda.jpg" alt="Work 2 Description">
-        <img src="Headphones.jpg" alt="Work 3 Description">
-        <img src="cloth.jpg" alt="Work 4 Description">
-        <img src="hydroflask.jpg" alt="Work 5 Description">
-        <img src="flower.jpg" alt="Work 6 Description">
-        <!-- Add more images as needed -->
-    </div>
-    <div class="overlay-text">
-        <span class="text-top">Fory</span>
-        <span class="text-bottom">Studio</span>
+        <!-- Work Showcase Section -->
+        <div class="work-showcase">
+            <img src="trunk.jpg" alt="Work 1 Description">
+            <img src="soda.jpg" alt="Work 2 Description">
+            <img src="Headphones.jpg" alt="Work 3 Description">
+            <img src="cloth.jpg" alt="Work 4 Description">
+            <img src="hydroflask.jpg" alt="Work 5 Description">
+            <img src="flower.jpg" alt="Work 6 Description">
+            <!-- Add more images as needed -->
+        </div>
+        <div class="overlay-text">
+            <span class="text-top">Fory</span>
+            <span class="text-bottom">Studio</span>
+        </div>
     </div>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.nav-menu');
+        
+            hamburgerMenu.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+        });
+        </script>
+        
     <script>
         // Basic Three.js setup
         const scene = new THREE.Scene();
