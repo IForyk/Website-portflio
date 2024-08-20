@@ -342,8 +342,100 @@ header nav ul li a {
     display: inline-block; /* Ensures the heading doesn't stretch the full width */
     z-index: 3; /* This z-index is unnecessary for the h1 unless it's positioned */
 }
+/* Mobile Styles */
+@media (max-width: 768px) {
+    header {
+        height: auto; /* Adjust height if needed */
+        flex-direction: column; /* Stack items vertically */
+        padding: 1% 2%; /* Adjust padding for mobile */
+    }
 
+    header nav {
+        margin-right: 0; /* Remove margin on mobile */
+        margin-top: 10px; /* Add space between logo and nav */
+    }
 
+    header nav ul {
+        flex-direction: column; /* Stack navigation items vertically */
+        gap: 10px; /* Adjust space between items */
+    }
+
+    header nav ul li a {
+        font-size: 4vw; /* Increase font size for better readability */
+        line-height: normal; /* Adjust line height if needed */
+    }
+
+    .cube-text {
+        font-size: 4vw; /* Adjust font size for mobile */
+        right: 5%; /* Adjust position for better alignment */
+    }
+
+    .new-section {
+        flex-direction: column; /* Stack text and image vertically */
+        width: 90%; /* Adjust width for mobile */
+        margin-top: 20%; /* Adjust margin for better spacing */
+    }
+
+    .new-section h2 {
+        font-size: 5vw; /* Adjust font size for mobile */
+    }
+
+    .new-section p {
+        font-size: 4vw; /* Adjust font size for mobile */
+    }
+
+    .about-me-section {
+        width: 90%; /* Adjust width for mobile */
+        grid-template-columns: 1fr; /* Stack image and text vertically */
+    }
+
+    .about-me-section img {
+        width: 100%; /* Adjust image width for mobile */
+    }
+
+    .about-me-section h2 {
+        font-size: 5vw; /* Adjust font size for mobile */
+    }
+
+    .about-me-section p {
+        font-size: 4vw; /* Adjust font size for mobile */
+    }
+
+    .work-showcase {
+        grid-template-columns: 1fr; /* Stack images vertically on small screens */
+        gap: 10%; /* Adjust gap for mobile */
+        top: auto; /* Reset top position */
+        transform: none; /* Reset transform */
+    }
+
+    .work-showcase img {
+        height: auto; /* Adjust image height for mobile */
+    }
+
+    .what-we-do h1 {
+        font-size: 6vw; /* Adjust font size for mobile */
+    }
+
+    .overlay-text {
+        font-size: 8vw; /* Adjust font size for mobile */
+    }
+
+    .text-top {
+        font-size: 4vw; /* Adjust font size for mobile */
+    }
+
+    .text-bottom {
+        font-size: 5vw; /* Adjust font size for mobile */
+        position: relative;
+        top: 0; /* Reset top position */
+        left: 0; /* Reset left position */
+    }
+
+    .curve, .curve-1, .curve-2, .curve-3 {
+        height: auto; /* Adjust height for mobile */
+        width: 100%; /* Adjust width for mobile */
+    }
+}
 
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Poiret+One&display=swap" rel="stylesheet">
