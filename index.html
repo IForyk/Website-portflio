@@ -723,6 +723,19 @@ header nav ul li a {
         </script>
         
     <script>
+        // script.js
+// Select elements
+const hamburgerMenu = document.querySelector('.hamburger-menu');
+const navMenu = document.querySelector('.nav-menu');
+const header = document.querySelector('header');
+
+// Toggle the menu and color inversion
+hamburgerMenu.addEventListener('click', () => {
+    navMenu.classList.toggle('active');
+    header.classList.toggle('inverted');
+    navMenu.classList.toggle('inverted');
+});
+
         // Basic Three.js setup
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
@@ -881,5 +894,6 @@ window.addEventListener('resize', function() {
             });
         });
     </script>
+    <script src="script.js"></script>
 </body>
 </html>
