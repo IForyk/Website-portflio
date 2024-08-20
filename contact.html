@@ -222,12 +222,12 @@
     width: 100%;
     height: 100%;
     background: #ffffff;
-    z-index: 9999; /* Set a high z-index to ensure it's above all other elements */
-    display: none;
+    z-index: 9999;
+    display: none; /* Initially hidden */
 }
 
 .nav-menu.active {
-    display: block;
+    display: block; /* Shown when 'active' class is added */
 }
 
     canvas {
@@ -261,6 +261,7 @@
             </ul>
         </nav>
     </header>
+    
       <!-- Main Content -->
       <div class="contact-page">
         <h1>Contact Us</h1>
@@ -304,16 +305,15 @@
     <footer>
         <p>&copy; 2024 Fory Studio. All Rights Reserved.</p>
     </footer>
-    <script> 
-    // scripts.js
-document.addEventListener('DOMContentLoaded', function() {
-    const hamburgerMenu = document.querySelector('.hamburger-menu');
-    const navMenu = document.querySelector('.nav-menu');
-
-    hamburgerMenu.addEventListener('click', function() {
-        navMenu.classList.toggle('active');
-    });
-});
-</script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.nav-menu');
+    
+            hamburgerMenu.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+        });
+        </script>
 </body>
 </html>
