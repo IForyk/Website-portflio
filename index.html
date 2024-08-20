@@ -344,10 +344,16 @@ header nav ul li a {
 }
 /* Mobile Styles */
 @media (max-width: 1080px) {
+    /* Header */
     header {
-        height: auto; /* Adjust height if needed */
+        height: auto; /* Adjust height for mobile */
         flex-direction: column; /* Stack items vertically */
         padding: 1% 2%; /* Adjust padding for mobile */
+    }
+
+    header .logo img {
+        height: auto; /* Adjust logo size */
+        width: 100%; /* Ensure logo scales */
     }
 
     header nav {
@@ -362,18 +368,34 @@ header nav ul li a {
 
     header nav ul li a {
         font-size: 4vw; /* Increase font size for better readability */
-        line-height: normal; /* Adjust line height if needed */
+        line-height: normal; /* Adjust line height */
     }
 
+    /* Canvas */
+    canvas {
+        height: 15vh; /* Adjust height for mobile */
+    }
+
+    /* Content */
+    .content {
+        margin-top: 60px; /* Ensure content is not hidden behind the fixed header */
+    }
+
+    /* Cube Text */
     .cube-text {
         font-size: 4vw; /* Adjust font size for mobile */
         right: 5%; /* Adjust position for better alignment */
     }
 
+    /* New Section */
     .new-section {
         flex-direction: column; /* Stack text and image vertically */
         width: 90%; /* Adjust width for mobile */
         margin-top: 20%; /* Adjust margin for better spacing */
+        padding: 20px; /* Adjust padding */
+        background-color: #f8f8f8; /* Maintain background color */
+        border-radius: 20px; /* Maintain border radius */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Maintain box shadow */
     }
 
     .new-section h2 {
@@ -384,13 +406,75 @@ header nav ul li a {
         font-size: 4vw; /* Adjust font size for mobile */
     }
 
+    /* Duplicate New Section */
+    .new-section.duplicate {
+        margin-top: 20%; /* Adjust margin for better spacing */
+        width: 90%; /* Adjust width for mobile */
+        background-color: #f8f8f8; /* Maintain background color */
+        border-radius: 20px; /* Maintain border radius */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Maintain box shadow */
+    }
+
+    .new-section.duplicate .text-container {
+        padding-right: 0; /* Adjust padding for mobile */
+    }
+
+    .new-section.duplicate .image-container {
+        flex: 1; /* Maintain flex settings */
+    }
+
+    .new-section.duplicate .image-container img {
+        width: 100%; /* Adjust image width for mobile */
+        height: auto; /* Maintain aspect ratio */
+    }
+
+    /* Work Showcase */
+    .work-showcase {
+        grid-template-columns: 1fr; /* Stack images vertically on small screens */
+        gap: 10%; /* Adjust gap for mobile */
+        top: auto; /* Reset top position */
+        transform: none; /* Reset transform */
+    }
+
+    .work-showcase img {
+        height: auto; /* Adjust image height for mobile */
+        border-radius: 50px; /* Maintain border radius */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 1); /* Maintain box shadow */
+        opacity: 1; /* Ensure images are visible */
+        transform: none; /* Reset transform */
+    }
+
+    /* Overlay Text */
+    .overlay-text {
+        font-size: 8vw; /* Adjust font size for mobile */
+        left: 50%; /* Adjust position */
+    }
+
+    .text-top {
+        font-size: 4vw; /* Adjust font size for mobile */
+        margin-right: 0; /* Reset margin for mobile */
+    }
+
+    .text-bottom {
+        font-size: 5vw; /* Adjust font size for mobile */
+        position: relative;
+        top: 0; /* Reset top position */
+        left: 0; /* Reset left position */
+    }
+
+    /* About Me Section */
     .about-me-section {
         width: 90%; /* Adjust width for mobile */
         grid-template-columns: 1fr; /* Stack image and text vertically */
+        padding: 20px; /* Adjust padding */
+        background-color: #ffffff; /* Maintain background color */
+        border-radius: 20px; /* Maintain border radius */
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Maintain box shadow */
     }
 
     .about-me-section img {
         width: 100%; /* Adjust image width for mobile */
+        height: auto; /* Maintain aspect ratio */
     }
 
     .about-me-section h2 {
@@ -401,41 +485,33 @@ header nav ul li a {
         font-size: 4vw; /* Adjust font size for mobile */
     }
 
-    .work-showcase {
-        grid-template-columns: 1fr; /* Stack images vertically on small screens */
-        gap: 10%; /* Adjust gap for mobile */
-        top: auto; /* Reset top position */
-        transform: none; /* Reset transform */
-    }
-
-    .work-showcase img {
-        height: auto; /* Adjust image height for mobile */
+    /* What We Do */
+    .what-we-do {
+        top: 1000px; /* Adjust top position for mobile */
+        text-align: center; /* Center the text */
     }
 
     .what-we-do h1 {
         font-size: 6vw; /* Adjust font size for mobile */
     }
 
-    .overlay-text {
-        font-size: 8vw; /* Adjust font size for mobile */
-    }
-
-    .text-top {
-        font-size: 4vw; /* Adjust font size for mobile */
-    }
-
-    .text-bottom {
-        font-size: 5vw; /* Adjust font size for mobile */
-        position: relative;
-        top: 0; /* Reset top position */
-        left: 0; /* Reset left position */
-    }
-
+    /* Curves */
     .curve, .curve-1, .curve-2, .curve-3 {
         height: auto; /* Adjust height for mobile */
         width: 100%; /* Adjust width for mobile */
     }
+
+    /* Work Text */
+    .work-text {
+        top: 3000px; /* Adjust top position for better alignment */
+        text-align: center; /* Center the text */
+    }
+
+    .work-text h2 {
+        font-size: 4vw; /* Adjust font size for mobile */
+    }
 }
+
 
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Josefin+Slab:ital,wght@0,100..700;1,100..700&family=Poiret+One&display=swap" rel="stylesheet">
