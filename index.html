@@ -372,51 +372,51 @@ header nav ul li a {
 
     header {
     z-index: 10;
-    background-color: #ffffff; /* White background */
+    background-color: #ffffff;
     flex-direction: column;
     align-items: center;
     padding: 1rem 2%;
     height: auto;
     box-sizing: border-box;
-    position: relative;
+    position: relative; /* Ensure the z-index works by setting a position */
 }
 
-header .logo {
-    display: flex;
-    justify-content: center;
-    width: 100%; /* Ensure the logo container takes up full width */
-}
+    header .logo {
+        display: flex;
+        justify-content: center;
+        width: 100%; /* Ensure the logo container takes up full width */
+    }
 
-header .logo img {
-    height: 2.5rem; /* Adjust the logo size */
-    filter: invert(0); /* No inversion by default */
-}
+    header .logo img {
+        height: 2.5rem; /* Adjust the logo size */
+        filter: invert(0); /* No color inversion */
+    }
 
-header nav {
-    display: none; /* Hide default nav menu */
-    width: 100%; /* Full width for mobile */
-    margin: 0;
-    position: static;
-    box-shadow: none;
-    background-color: #dfdfdf; /* Light gray background */
-}
+    header nav {
+        display: none; /* Hide default nav menu */
+        width: 100%; /* Full width for mobile */
+        margin: 0;
+        position: static;
+        box-shadow: none;
+        background-color: #dfdfdf;
+    }
 
-header nav ul {
-    display: block; /* Stack nav items vertically */
-    width: 100%; /* Full width */
-}
+    header nav ul {
+        display: block; /* Stack nav items vertically */
+        width: 100%; /* Full width */
+    }
 
-header nav ul li {
-    border-bottom: 1px solid #d8d8d8; /* Border between items */
-}
+    header nav ul li {
+        border-bottom: 1px solid #000000; /* Add border between items */
+    }
 
-header nav ul li a {
-    display: block;
-    padding: 1rem;
-    font-size: 1.125rem;
-    color: #eeeeee; /* Light text color */
-    text-align: center; /* Center text */
-}
+    header nav ul li a {
+        display: block;
+        padding: 1rem;
+        font-size: 1.125rem;
+        color: #000000; /* Ensure the text color is black */
+        text-align: center; /* Center text */
+    }
 
     .hamburger-menu {
         display: block; /* Show hamburger menu button */
@@ -434,7 +434,7 @@ header nav ul li a {
         display: block;
         width: 1.875rem; /* Adjusted to rem for consistency */
         height: 0.1875rem; /* Adjusted to rem for consistency */
-        background-color: rgb(255, 255, 255);
+        background-color: black;
         margin: 0.3125rem 0; /* Adjusted to rem for consistency */
         z-index: 100;
     }
@@ -723,19 +723,6 @@ header nav ul li a {
         </script>
         
     <script>
-        // script.js
-// Select elements
-const hamburgerMenu = document.querySelector('.hamburger-menu');
-const navMenu = document.querySelector('.nav-menu');
-const header = document.querySelector('header');
-
-// Toggle the menu and color inversion
-hamburgerMenu.addEventListener('click', () => {
-    navMenu.classList.toggle('active');
-    header.classList.toggle('inverted');
-    navMenu.classList.toggle('inverted');
-});
-
         // Basic Three.js setup
         const scene = new THREE.Scene();
         const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 1, 10000);
@@ -894,6 +881,5 @@ window.addEventListener('resize', function() {
             });
         });
     </script>
-    <script src="script.js"></script>
 </body>
 </html>
