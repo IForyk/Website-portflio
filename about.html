@@ -367,6 +367,43 @@ footer {
 .nav-menu.active {
     display: block;
 }
+.about-me-section {
+            position: relative;
+            margin-top: 200px;
+            max-width: 1200px; /* Center and limit width */
+            margin: 600px auto; /* Centered with top and bottom margin */
+            padding: 30px;
+            background-color: #ddddddd2;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            display: flex; /* Flexbox for layout */
+            align-items: center; /* Center content vertically */
+            gap: 20px; /* Space between image and text */
+            z-index: 2;
+        }
+
+        .about-me-section img {
+            max-width: 400px; /* Limit the image width */
+            height: auto;
+            border-radius: 10px;
+        }
+
+        .about-me-section div {
+            flex: 1; /* Allow text to take remaining space */
+        }
+
+        .about-me-section h2 {
+            font-size: 48px;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        .about-me-section p {
+            font-size: 24px;
+            color: #000000;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
 
     canvas {
         height: 15vh; /* Adjust height for mobile */
