@@ -8,60 +8,88 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <style>
-        body {
+        html, body {
+            height: 100%;
             margin: 0;
-            overflow: auto;
-            height: 500vh;
-            background-color: #fffffff5;
-            font-family: 'Poiret One', sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            overflow: auto; /* Allow scrolling */
+            background-color: #fffffff5; /* Light gray background for contrast */
+            font-family: 'Poiret ONe'  /* Ensure the font is applied */
+        }
+
+        .content {
+            flex: 1; /* Take up available space to push footer to the bottom */
+        }
+
+        footer {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 2500px; /* Push footer to the bottom */
+            position: relative; /* Ensure footer is positioned correctly */
+            bottom: 0;
         }
         header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #ffffff;
-            color: black;
-            z-index: 3;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            height: 60px;
-        }
-        header .logo {
-            display: flex;
-            align-items: center;
-        }
-        header .logo img {
-            height: 80px;
-            width: auto;
-        }
-        header nav {
-            margin-left: 0;
-            margin-right: auto;
-        }
-        header nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 200px;
-            margin-left: 900px;
-        }
-        header nav ul li {
-            display: inline;
-        }
-        header nav ul li a {
-            color: black;
-            text-decoration: none;
-            font-size: 16px;
-            font-family: 'Poiret One', sans-serif;
-            font-weight: bold;
-            line-height: 60px;
-        }
-        .content {
-            margin-top: 60px;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    color: black;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    padding: 0 2%;  /* Adjust padding if necessary */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 10vh;  /* Adjust height based on viewport height */
+    box-sizing: border-box; /* Includes padding in width calculation */
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    height: 100%;  /* Make sure the logo container takes full height of the header */
+    flex-shrink: 0;  /* Prevent the logo from shrinking */
+}
+
+header .logo img {
+    height: 80%;  /* Adjust this value as needed */
+    width: auto;  /* Maintain aspect ratio */
+    max-height: 100%;  /* Ensure it doesn't exceed header height */
+}
+
+header nav {
+    display: flex;
+    align-items: center; /* Vertically center nav items */
+    margin-left: auto;  /* Pushes the nav to the right side */
+    margin-right: 20%;   /* Adjust this value to move nav items closer to the center or right */
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 60%;  /* Space between nav items */
+}
+
+header nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 100%;  /* Adjust font size as needed */
+    font-weight: bold;
+    line-height: 10vh;  /* Ensure text aligns vertically with the header height */
+}
+        .main-content {
+            margin-top: 60px; /* Space for fixed header */
+            padding: 20px;
+            background-color: #ffffff; /* White background for content */
         }
         .work-intro {
             text-align: center;
