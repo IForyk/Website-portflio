@@ -293,6 +293,7 @@
     </style>
 </head>
 <body>
+    <!-- Header -->
     <header>
         <div class="logo">
             <img src="ForyNOBG.png" alt="Fory Logo">
@@ -311,47 +312,50 @@
             </ul>
         </nav>
     </header>
-    
+
     <!-- Main Content -->
-    <div class="contact-page">
-        <h1>Contact Us</h1>
-        <p>We’d love to hear from you! Whether you have a question about our services, need support, or just want to say hi, feel free to drop us a message.</p>
+    <div class="main-content">
+        <div class="contact-page">
+            <h1>Contact Us</h1>
+            <p>We’d love to hear from you! Whether you have a question about our services, need support, or just want to say hi, feel free to drop us a message.</p>
 
-        <!-- Contact Form -->
-        <div class="contact-form">
-            <form action="send-message.php" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" required>
-                
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-                
-                <label for="subject">Subject:</label>
-                <input type="text" id="subject" name="subject" required>
-                
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" rows="5" required></textarea>
-                
-                <button type="submit">Send Message</button>
-            </form>
-        </div>
+            <!-- Contact Form -->
+            <div class="contact-form">
+                <form action="send-message.php" method="POST">
+                    <label for="name">Name:</label>
+                    <input type="text" id="name" name="name" required>
+                    
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                    
+                    <label for="subject">Subject:</label>
+                    <input type="text" id="subject" name="subject" required>
+                    
+                    <label for="message">Message:</label>
+                    <textarea id="message" name="message" rows="5" required></textarea>
+                    
+                    <button type="submit">Send Message</button>
+                </form>
+            </div>
 
-        <!-- Contact Information -->
-        <div class="contact-info">
-            <h2>Our Contact Details</h2>
-            <p>Email: <a href="mailto:jacob.fory@gmail.com">jacob.fory@gmail.com</a></p>
-            <p>Follow us on social media:</p>
-            <ul>
-                <li><a href="https://www.youtube.com/@JacobFory">Youtube</a></li>
-                <li><a href="https://www.instagram.com/jacob.fory/">Instagram</a></li>
-                <li><a href="https://www.behance.net/jacobfory">Behance</a></li>
-                <li><a href="https://www.patreon.com/JacobFory">Patreon</a></li>
-            </ul>
+            <!-- Contact Information -->
+            <div class="contact-info">
+                <h2>Our Contact Details</h2>
+                <p>Email: <a href="mailto:jacob.fory@gmail.com">jacob.fory@gmail.com</a></p>
+                <p>Follow us on social media:</p>
+                <ul>
+                    <li><a href="https://www.youtube.com/@JacobFory">Youtube</a></li>
+                    <li><a href="https://www.instagram.com/jacob.fory/">Instagram</a></li>
+                    <li><a href="https://www.behance.net/jacobfory">Behance</a></li>
+                    <li><a href="https://www.patreon.com/JacobFory">Patreon</a></li>
+                    <!-- Add more social media links if needed -->
+                </ul>
+            </div>
         </div>
     </div>
-
+    
     <!-- Footer -->
-    <footer>
+    <footer class="footer">
         <p>&copy; 2024 Fory Studio. All Rights Reserved.</p>
     </footer>
     
