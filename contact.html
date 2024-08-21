@@ -119,6 +119,8 @@
             position: fixed;
             bottom: 0;
         }
+
+
         @media (max-width: 1080px) {
     html, body {
         width: 100%;
@@ -157,32 +159,6 @@
         filter: invert(0);
     }
 
-    header nav {
-        display: none;
-        width: 100%;
-        margin: 0;
-        position: static;
-        box-shadow: none;
-        background-color: #dfdfdf;
-    }
-
-    header nav ul {
-        display: block;
-        width: 100%;
-    }
-
-    header nav ul li {
-        border-bottom: 1px solid #000000;
-    }
-
-    header nav ul li a {
-        display: block;
-        padding: 1rem;
-        font-size: 1.125rem;
-        color: #000000;
-        text-align: center;
-    }
-
     .hamburger-menu {
         display: block;
         background: none;
@@ -205,33 +181,92 @@
     }
 
     .nav-menu {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: #ffffff;
-    z-index: 9999;
-    display: none;
-    opacity: 0;
-    transform: translateX(-100%);
-    transition: opacity 0.3s ease, transform 0.3s ease;
-}
-
-.nav-menu.active {
-    display: block;
-    opacity: 1;
-    transform: translateX(0);
-}
-
-
-    canvas {
-        height: 15vh;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: #ffffff;
+        z-index: 9999;
+        display: none;
+        opacity: 0;
+        transform: translateX(-100%);
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        overflow-y: auto; /* Allow scrolling if the menu is tall */
     }
 
-    .content {
+    .nav-menu.active {
+        display: block;
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    header nav ul {
+        list-style: none; /* Remove default list styles */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+    }
+
+    header nav ul li {
+        border-bottom: 1px solid #000000;
+    }
+
+    header nav ul li a {
+        display: block;
+        padding: 1rem;
+        font-size: 1.125rem;
+        color: #000000;
+        text-align: center;
+        text-decoration: none; /* Remove default underline */
+    }
+
+    header nav ul li a:hover {
+        background-color: #f0f0f0; /* Light hover effect */
+    }
+
+    .contact-page {
+        padding: 1rem;
         flex: 1;
-        margin-top: 3.75rem;
+    }
+
+    .contact-form {
+        margin-top: 1rem;
+    }
+
+    .contact-form label {
+        display: block;
+        margin-bottom: 0.5rem;
+    }
+
+    .contact-form input, .contact-form textarea {
+        width: 100%;
+        padding: 0.5rem;
+        margin-bottom: 1rem;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+    }
+
+    .contact-form button {
+        padding: 0.5rem 1rem;
+        border: none;
+        background-color: #007bff;
+        color: #fff;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    .contact-form button:hover {
+        background-color: #0056b3;
+    }
+
+    .contact-info ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+
+    .contact-info ul li {
+        margin-bottom: 0.5rem;
     }
 
     .footer {
@@ -246,9 +281,10 @@
     footer p {
         font-size: 1rem;
         margin: 0;
-        color: #000000; /* Changed to black for readability */
+        color: #000000;
     }
 }
+
 
   
     </style>
@@ -273,8 +309,8 @@
         </nav>
     </header>
     
-      <!-- Main Content -->
-      <div class="contact-page">
+    <!-- Main Content -->
+    <div class="contact-page">
         <h1>Contact Us</h1>
         <p>We’d love to hear from you! Whether you have a question about our services, need support, or just want to say hi, feel free to drop us a message.</p>
 
@@ -307,27 +343,26 @@
                 <li><a href="https://www.instagram.com/jacob.fory/">Instagram</a></li>
                 <li><a href="https://www.behance.net/jacobfory">Behance</a></li>
                 <li><a href="https://www.patreon.com/JacobFory">Patreon</a></li>
-                <!-- Add more social media links if needed -->
             </ul>
         </div>
-
+    </div>
 
     <!-- Footer -->
     <footer>
         <p>&copy; 2024 Fory Studio. All Rights Reserved.</p>
     </footer>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
-<script>
-    document.addEventListener('DOMContentLoaded', function() {
-        const hamburgerMenu = document.querySelector('.hamburger-menu');
-        const navMenu = document.querySelector('.nav-menu');
     
-        hamburgerMenu.addEventListener('click', function() {
-            navMenu.classList.toggle('active');
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.nav-menu');
+        
+            hamburgerMenu.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
         });
-    });
     </script>
 </body>
 </html>
