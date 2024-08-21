@@ -274,7 +274,7 @@ header nav ul li a {
 }
 
         @media (max-width: 1080px) {
-    html, body {
+            html, body {
         width: 100%;
         height: 100%;
         margin: 0;
@@ -288,16 +288,23 @@ header nav ul li a {
         min-height: 100vh; /* Full viewport height */
         margin: 0;
     }
-    .work-showcase {
-                grid-template-columns: repeat(2, 1fr); /* 2 columns grid */
-                grid-template-rows: auto; /* Adjust row heights automatically */
-                gap: 10px; /* Reduce gap between items */
-            }
 
-            .work-showcase img {
-                height: auto; /* Adjust height automatically */
-                object-fit: cover; /* Ensure images fill the space without distortion */
-            }
+    .work-showcase {
+        width: 90%; /* Slightly reduce width for better fit */
+        margin: 0 auto; /* Center the grid */
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* 2 columns grid */
+        grid-auto-rows: 1fr; /* Auto rows with equal height */
+        gap: 10px; /* Reduce gap between items */
+    }
+
+    .work-showcase img {
+        width: 100%;
+        height: auto; /* Adjust height automatically */
+        object-fit: cover; /* Ensure images fill the space without distortion */
+        border-radius: 10px; /* Slight rounding of corners */
+    }
+}
 
     .wrapper {
         display: flex;
@@ -401,7 +408,7 @@ header nav ul li a {
         flex: 1; /* Allow content to grow and fill available space */
         margin-top: 3.75rem; /* Adjusted to rem for consistency */
     }
-}
+
     </style>
 </head>
 <body>
