@@ -8,57 +8,84 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <style>
-        body {
+        html, body {
+            height: 100%;
             margin: 0;
-            overflow: auto;
-            height: 100vh; /* Adjusted to fit content */
-            background-color: #fffffff5;
-            font-family: 'Poiret One', sans-serif;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            overflow: auto; /* Allow scrolling */
+            background-color: #ffca37f5; /* Light gray background for contrast */
+            font-family: 'Poiret ONe'  /* Ensure the font is applied */
+        }
+
+        .content {
+            flex: 1; /* Take up available space to push footer to the bottom */
+        }
+
+        footer {
+            background-color: #ffffff;
+            text-align: center;
+            padding: 20px;
+            width: 100%;
+            box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
+            margin-top: 2500px; /* Push footer to the bottom */
+            position: relative; /* Ensure footer is positioned correctly */
+            bottom: 0;
         }
         header {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background-color: #ffffff;
-            color: black; /* Changed from white to ensure readability */
-            z-index: 3; /* Ensure the header is above other elements */
-            display: flex;
-            justify-content: space-between; /* Space between logo and nav */
-            align-items: center;
-            padding: 10px 20px; /* Adjusted padding for a smaller header */
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Add shadow for depth */
-            height: 60px; /* Adjusted header height */
-        }
-        header .logo {
-            display: flex;
-            align-items: center; /* Center vertically */
-        }
-        header .logo img {
-            height: 80px; /* Adjust height to fit the smaller header */
-            width: auto; /* Maintain aspect ratio */
-        }
-        header nav {
-            margin-left: 0; /* Ensure navigation is aligned to the left */
-            margin-right: auto; /* Push the navigation to the left side */
-        }
-        header nav ul {
-            list-style: none;
-            margin: 0;
-            padding: 0;
-            display: flex;
-            gap: 200px; /* Space between nav items */
-            margin-left: 900px; /* Add margin to push navigation items to the right */
-        }
-        header nav ul li {
-            display: inline;
-        }
-        header nav ul li a {
-            color: black; /* Adjust text color for visibility */
-            text-decoration: none;
-            font-size: 16px; /* Font size for nav links */
-            font-weight: bold;
-            line-height: 60px; /* Center text vertically within the header */
-        }
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: #ffffff;
+    color: black;
+    z-index: 3;
+    display: flex;
+    align-items: center;
+    padding: 0 2%;  /* Adjust padding if necessary */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    height: 10vh;  /* Adjust height based on viewport height */
+    box-sizing: border-box; /* Includes padding in width calculation */
+}
+
+header .logo {
+    display: flex;
+    align-items: center;
+    height: 100%;  /* Make sure the logo container takes full height of the header */
+    flex-shrink: 0;  /* Prevent the logo from shrinking */
+}
+
+header .logo img {
+    height: 80%;  /* Adjust this value as needed */
+    width: auto;  /* Maintain aspect ratio */
+    max-height: 100%;  /* Ensure it doesn't exceed header height */
+}
+
+header nav {
+    display: flex;
+    align-items: center; /* Vertically center nav items */
+    margin-left: auto;  /* Pushes the nav to the right side */
+    margin-right: 20%;   /* Adjust this value to move nav items closer to the center or right */
+}
+
+header nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 60%;  /* Space between nav items */
+}
+
+header nav ul li a {
+    color: black;
+    text-decoration: none;
+    font-size: 100%;  /* Adjust font size as needed */
+    font-weight: bold;
+    line-height: 10vh;  /* Ensure text aligns vertically with the header height */
+}
         .main-content {
             margin-top: 60px; /* Space for fixed header */
             padding: 20px;
@@ -231,6 +258,15 @@
     display: block;
 }
 
+    canvas {
+        height: 15vh; /* Adjust height for mobile */
+    }
+
+    .content {
+        flex: 1; /* Allow content to grow and fill available space */
+        margin-top: 3.75rem; /* Adjusted to rem for consistency */
+    }
+
     .contact-page {
         padding: 1rem;
         flex: 1;
@@ -315,83 +351,50 @@
             </ul>
         </nav>
     </header>
+    
+    <!-- Main Content -->
+    <div class="contact-page">
+        <h1>Contact Us</h1>
+        <p>We’d love to hear from you! Whether you have a question about our services, need support, or just want to say hi, feel free to drop us a message.</p>
 
-    <canvas id="cubeCanvas"></canvas>
+        <!-- Contact Form -->
+        <div class="contact-form">
+            <form action="send-message.php" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                
+                <label for="subject">Subject:</label>
+                <input type="text" id="subject" name="subject" required>
+                
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+                
+                <button type="submit">Send Message</button>
+            </form>
+        </div>
 
-    <div class="cube-text">
-        <p>We deliver outstanding work</p>
-        <p>and empower others to achieve greatness.</p>
+        <!-- Contact Information -->
+        <div class="contact-info">
+            <h2>Our Contact Details</h2>
+            <p>Email: <a href="mailto:jacob.fory@gmail.com">jacob.fory@gmail.com</a></p>
+            <p>Follow us on social media:</p>
+            <ul>
+                <li><a href="https://www.youtube.com/@JacobFory">Youtube</a></li>
+                <li><a href="https://www.instagram.com/jacob.fory/">Instagram</a></li>
+                <li><a href="https://www.behance.net/jacobfory">Behance</a></li>
+                <li><a href="https://www.patreon.com/JacobFory">Patreon</a></li>
+            </ul>
+        </div>
     </div>
 
-    <div class="content">
-        <!-- 3D Cube section here -->
-
-        <section class="new-section">
-            <div class="text-container">
-                <h2>Your Visuals, Our 3D Creations</h2>
-                <p>At Fory Studio, we begin by understanding your vision and needs. We then create a tailored solution and produce high-quality 3D visuals to bring your ideas to life with precision and artistry.</p>
-            </div>
-            <div class="image-container">
-                <img src="ig monitor.jpg" alt="Project for DialedWeb">
-            </div>
-        </section>
-
-        <section class="new-section duplicate">
-            <div class="text-container">
-                <h2>Master 3D Design with Us</h2>
-                <p>Discover how to excel in 3D design with our hands-on Blender training. We’ll guide you through advanced techniques and strategies to help you stand out in the 3D marketplace and create exceptional visual content.</p>
-            </div>
-            <div class="image-container">
-                <img src="TrunkNodes.png" alt="Visual Example">
-            </div>
-        </section>
-
-        <!-- First SVG Curve -->
-        <div class="curve curve-1">
-            <svg viewBox="0 0 1440 320">
-                <path fill="#000000" fill-opacity="1" d="M0,256L48,250.7C96,245,192,235,288,229.3C384,224,480,224,576,192C672,160,768,96,864,101.3C960,107,1056,181,1152,213.3C1248,245,1344,235,1392,229.3L1440,224L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
-            </svg>
-        </div>
-
-        <!-- Second SVG Curve -->
-        <div class="curve curve-2">
-            <svg viewBox="0 0 1440 320">
-                <path fill="#000000" fill-opacity="1" d="M0,192L48,165.3C96,139,192,85,288,80C384,75,480,117,576,149.3C672,181,768,203,864,192C960,181,1056,139,1152,138.7C1248,139,1344,181,1392,202.7L1440,224L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
-            </svg>
-        </div>
-
-        <!-- Third SVG Curve (New Curve to separate About Me and Work Showcase sections) -->
-        <div class="curve curve-3">
-            <img src="curve2.svg" alt="Curve SVG" />
-        </div>
-        <div class="work-text">
-            <a href="portfolio.html">
-                <h2>Work Showcase</h2>
-            </a>
-        </div>
-
-        <div class="what-we-do">
-            <h1>What we do</h1>
-        </div>
-
-        <!-- Work Showcase Section -->
-        <div class="work-showcase">
-            <img src="trunk.jpg" alt="Work 1 Description">
-            <img src="soda.jpg" alt="Work 2 Description">
-            <img src="Headphones.jpg" alt="Work 3 Description">
-            <img src="cloth.jpg" alt="Work 4 Description">
-            <img src="hydroflask.jpg" alt="Work 5 Description">
-            <img src="flower.jpg" alt="Work 6 Description">
-            <!-- Add more images as needed -->
-        </div>
-        <div class="overlay-text">
-            <span class="text-top">Fory</span>
-            <span class="text-bottom">Studio</span>
-        </div>
-        <footer>
-            <p>&copy; 2024 Fory Studio. All Rights Reserved.</p>
-        </footer>
-    </div>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Fory Studio. All Rights Reserved.</p>
+    </footer>
+    
     <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/loaders/GLTFLoader.js"></script>
     <script>
@@ -403,6 +406,6 @@
                 navMenu.classList.toggle('active');
             });
         });
-        </script>
+    </script>
 </body>
 </html>
