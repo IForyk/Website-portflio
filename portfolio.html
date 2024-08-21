@@ -130,6 +130,11 @@ header nav ul li a {
             opacity: 1;
             transform: translateY(0);
         }
+        img {
+    max-width: 100%; /* Ensures image doesn't overflow its container */
+    height: auto; /* Maintains aspect ratio */
+    display: block; /* Removes bottom spacing */
+}
 
         /* Assign different grid areas to each image */
         .img1 { /* trunk*/
@@ -257,6 +262,16 @@ header nav ul li a {
             width: 100%;
             box-shadow: 0 -2px 4px rgba(0, 0, 0, 0.1);
         }
+        .portfolio-container {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping of images */
+    gap: 10px; /* Space between images */
+}
+
+.portfolio-item {
+    flex: 1 1 calc(50% - 20px); /* Adjusts to 2 columns on mobile */
+    margin-bottom: 20px;
+}
 
         @media (max-width: 1080px) {
     html, body {
@@ -272,6 +287,14 @@ header nav ul li a {
         flex-direction: column;
         min-height: 100vh; /* Full viewport height */
         margin: 0;
+    }
+    .portfolio-item {
+        flex: 1 1 100%; /* Stacks images vertically on smaller screens */
+    }
+    .portfolio-image {
+        width: 100%; /* Ensure images take full width of the screen */
+        max-height: 50vh; /* Adjust this value to control the height */
+        object-fit: cover; /* Scales the image to cover the container while maintaining aspect ratio */
     }
 
     .wrapper {
