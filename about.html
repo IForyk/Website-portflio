@@ -437,13 +437,17 @@ footer {
 }
 .focus-section {
     position: relative;
-    max-width: 90%; /* Ensures the section doesn't exceed 90% of the viewport width */
-    margin: 50px auto; /* Centers the section horizontally with 50px margin at the top and bottom */
+    margin-top: 200px;
+    max-width: 90%; /* Limit width to 90% of the viewport */
+    margin: 20px auto; /* Centered with smaller top and bottom margins */
     padding: 20px;
-    background-color: #d4d4d4c0; 
+    background-color: #ddddddd2;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center; 
+    display: flex;
+    flex-direction: column; /* Stack elements vertically */
+    align-items: center; /* Center content horizontally */
+    gap: 20px; /* Space between image and text */
     z-index: 2;
 }
 
