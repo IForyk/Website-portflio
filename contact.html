@@ -137,69 +137,107 @@
         min-height: 100vh; /* Full viewport height */
         margin: 0;
     }
-
-    .hamburger-menu {
-        display: block; /* Show hamburger button */
-        background: none;
-        border: none;
-        cursor: pointer;
-        padding: 0.625rem;
-        position: fixed;
-        top: 0.6rem;
-        left: 1rem;
-        z-index: 100;
+    .main-content {
+        flex: 1; /* Takes up the remaining space */
     }
 
-    .hamburger-menu .bar {
-        display: block;
-        width: 1.875rem;
-        height: 0.1875rem;
-        background-color: black;
-        margin: 0.3125rem 0;
-    }
-
-    .nav-menu {
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: #ffffff;
-        z-index: 9999;
-        display: none;
-        opacity: 0;
-        transform: translateX(-100%);
-        transition: opacity 0.3s ease, transform 0.3s ease;
-        overflow-y: auto; /* Allow scrolling if menu is tall */
-        flex-direction: column; /* Stack items vertically */
-    }
-
-    .nav-menu.active {
+    .wrapper {
+        flex: 1; /* Allow the wrapper to grow and push footer down */
         display: flex;
-        opacity: 1;
-        transform: translateX(0);
+        flex-direction: column; /* Stack header, content, and footer vertically */
+    }
+
+    header {
+    z-index: 10;
+    background-color: #ffffff;
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem 2%;
+    height: auto;
+    box-sizing: border-box;
+    position: relative; /* Ensure the z-index works by setting a position */
+}
+
+    header .logo {
+        display: flex;
+        justify-content: center;
+        width: 100%; /* Ensure the logo container takes up full width */
+    }
+
+    header .logo img {
+        height: 2.5rem; /* Adjust the logo size */
+        filter: invert(0); /* No color inversion */
+    }
+
+    header nav {
+        display: none; /* Hide default nav menu */
+        width: 100%; /* Full width for mobile */
+        margin: 0;
+        position: static;
+        box-shadow: none;
+        background-color: #dfdfdf;
     }
 
     header nav ul {
-        display: flex; /* Use flexbox for vertical alignment */
-        flex-direction: column; /* Stack items vertically */
-        list-style: none; /* Remove default list styles */
-        padding: 0; /* Remove default padding */
-        margin: 0; /* Remove default margin */
+        display: block; /* Stack nav items vertically */
         width: 100%; /* Full width */
     }
 
     header nav ul li {
-        border-bottom: 1px solid #000000; /* Border between items */
+        border-bottom: 1px solid #000000; /* Add border between items */
     }
 
     header nav ul li a {
         display: block;
         padding: 1rem;
         font-size: 1.125rem;
-        color: #000000; /* Text color */
+        color: #000000; /* Ensure the text color is black */
         text-align: center; /* Center text */
-        text-decoration: none; /* Remove underline */
+    }
+
+    .hamburger-menu {
+        display: block; /* Show hamburger menu button */
+        background: none;
+        border: none;
+        cursor: pointer;
+        padding: 0.625rem; /* Adjusted to rem for consistency */
+        position: fixed; /* Keep the hamburger menu fixed at the corner */
+        top: 0.6rem; /* Distance from the top of the viewport */
+        left: 1rem; /* Distance from the left edge of the viewport */
+        z-index: 100; /* Ensure it's above other content */
+    }
+
+    .hamburger-menu .bar {
+        display: block;
+        width: 1.875rem; /* Adjusted to rem for consistency */
+        height: 0.1875rem; /* Adjusted to rem for consistency */
+        background-color: black;
+        margin: 0.3125rem 0; /* Adjusted to rem for consistency */
+        z-index: 100;
+    }
+
+    .nav-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #ffffff;
+    z-index: 9999; /* Set a high z-index to ensure it's above all other elements */
+    display: none;
+}
+
+.nav-menu.active {
+    display: block;
+}
+
+    canvas {
+        height: 15vh; /* Adjust height for mobile */
+    }
+
+    .content {
+        flex: 1; /* Allow content to grow and fill available space */
+        margin-top: 3.75rem; /* Adjusted to rem for consistency */
     }
 
     .contact-page {
@@ -262,10 +300,6 @@
         color: #000000; /* Text color */
     }
 
-    /* Hide the cube on mobile */
-    #cubeCanvas {
-        display: none !important;
-    }
 }
 
   
