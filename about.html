@@ -462,6 +462,16 @@ header nav ul li a {
 <div class="curve curve-3">
 <img src="curve2.svg" alt="Curve SVG" />
 </div>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const hamburgerMenu = document.querySelector('.hamburger-menu');
+        const navMenu = document.querySelector('.nav-menu');
+    
+        hamburgerMenu.addEventListener('click', function() {
+            navMenu.classList.toggle('active');
+        });
+    });
+</script>
 
 </body>
 </html>

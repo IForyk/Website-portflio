@@ -444,6 +444,16 @@ header nav ul li a {
     <footer>
         <p>&copy; 2024 Fory Studio. All Rights Reserved.</p>
     </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const hamburgerMenu = document.querySelector('.hamburger-menu');
+            const navMenu = document.querySelector('.nav-menu');
+        
+            hamburgerMenu.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+            });
+        });
+    </script>
 
     <script>
         // Animation for showcase images
