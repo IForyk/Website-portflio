@@ -122,7 +122,7 @@
 
 
         /* Mobile Styles */
-        @media (max-width: 1080px) {
+@media (max-width: 1080px) {
     html, body {
         width: 100%;
         height: 100%;
@@ -172,6 +172,8 @@
         transition: opacity 0.3s ease, transform 0.3s ease;
         overflow-y: auto; /* Allow scrolling if menu is tall */
         flex-direction: column; /* Stack items vertically */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
     }
 
     .nav-menu.active {
@@ -191,15 +193,21 @@
 
     header nav ul li {
         border-bottom: 1px solid #000000; /* Border between items */
+        margin: 0; /* Remove margin between items */
     }
 
     header nav ul li a {
         display: block;
-        padding: 1rem;
+        padding: 1rem; /* Adjust padding as needed */
         font-size: 1.125rem;
         color: #000000; /* Text color */
         text-align: center; /* Center text */
         text-decoration: none; /* Remove underline */
+        box-sizing: border-box; /* Include padding in width calculation */
+    }
+
+    header nav ul li a:hover {
+        background-color: #f0f0f0; /* Hover effect */
     }
 
     .contact-page {
@@ -267,6 +275,7 @@
         display: none !important;
     }
 }
+
 
   
     </style>
