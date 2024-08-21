@@ -288,13 +288,15 @@ header nav ul li a {
         min-height: 100vh; /* Full viewport height */
         margin: 0;
     }
-    .portfolio-item {
-        flex: 1 1 100%; /* Stacks images vertically on smaller screens */
+    .work-showcase {
+        grid-template-columns: repeat(2, 1fr); /* 2 columns grid */
+        grid-template-rows: auto; /* Adjust row heights automatically */
+        gap: 10px; /* Reduce gap between items */
     }
-    .portfolio-image {
-        width: 100%; /* Ensure images take full width of the screen */
-        max-height: 50vh; /* Adjust this value to control the height */
-        object-fit: cover; /* Scales the image to cover the container while maintaining aspect ratio */
+
+    .work-showcase img {
+        height: auto; /* Adjust height automatically */
+        object-fit: cover; /* Ensure images fill the space without distortion */
     }
 
     .wrapper {
