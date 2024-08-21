@@ -200,32 +200,32 @@
         opacity: 1;
         transform: translateX(0);
     }
+    header nav {
+        display: none; /* Hide default nav menu */
+        width: 100%; /* Full width for mobile */
+        margin: 0;
+        position: static;
+        box-shadow: none;
+        background-color: #dfdfdf;
+    }
 
     header nav ul {
-        list-style: none; /* Remove default list styles */
-        padding: 0; /* Remove default padding */
-        margin: 0; /* Remove default margin */
-        display: flex;
-        flex-direction: column; /* Stack links vertically */
+        display: block; /* Stack nav items vertically */
+        width: 100%; /* Full width */
     }
 
     header nav ul li {
-        border-bottom: 1px solid #000000;
-        margin: 0; /* Remove margin to reduce gaps */
+        border-bottom: 1px solid #000000; /* Add border between items */
     }
 
     header nav ul li a {
         display: block;
-        padding: 0.75rem; /* Reduced padding for less gap */
+        padding: 1rem;
         font-size: 1.125rem;
-        color: #000000;
-        text-align: center;
-        text-decoration: none; /* Remove default underline */
+        color: #000000; /* Ensure the text color is black */
+        text-align: center; /* Center text */
     }
 
-    header nav ul li a:hover {
-        background-color: #f0f0f0; /* Light hover effect */
-    }
 
     .contact-page {
         padding: 1rem;
