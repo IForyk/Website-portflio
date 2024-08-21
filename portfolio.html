@@ -294,8 +294,8 @@ header nav ul li a {
         margin: 0 auto; /* Center the grid */
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* 2 columns grid */
-        grid-auto-rows: 1fr; /* Auto rows with equal height */
-        gap: 0.1%; /* Reduce gap between items */
+        grid-template-rows: repeat(auto-fill, minmax(200px, auto)); /* Control minimum row height */
+    gap: 10px; /* Space between items */
     }
 
     .work-showcase img {
