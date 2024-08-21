@@ -164,14 +164,15 @@ header nav ul li a {
         min-height: 100vh; /* Full viewport height */
         margin: 0;
     }
-    .main-content {
-        flex: 1; /* Takes up the remaining space */
-    }
 
     .wrapper {
-        flex: 1; /* Allow the wrapper to grow and push footer down */
         display: flex;
         flex-direction: column; /* Stack header, content, and footer vertically */
+        flex: 1; /* Allow the wrapper to grow and push footer down */
+    }
+
+    .main-content {
+        flex: 1; /* Takes up the remaining space */
     }
 
     header {
