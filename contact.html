@@ -201,10 +201,20 @@
         transform: translateX(0);
     }
 
+    header nav {
+        display: flex; /* Use flexbox to handle layout */
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center items horizontally */
+        width: 100%; /* Full width */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+    }
+
     header nav ul {
         list-style: none; /* Remove default list styles */
         padding: 0; /* Remove default padding */
         margin: 0; /* Remove default margin */
+        width: 100%; /* Ensure full width */
     }
 
     header nav ul li {
@@ -216,7 +226,7 @@
         padding: 1rem;
         font-size: 1.125rem;
         color: #000000; /* Text color */
-        text-align: center;
+        text-align: center; /* Center text */
         text-decoration: none; /* Remove underline */
     }
 
@@ -284,9 +294,11 @@
         color: #000000; /* Text color */
     }
 
+    /* Hide the cube on mobile */
+    #cubeCanvas {
+        display: none !important;
+    }
 }
-
-
 
   
     </style>
