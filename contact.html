@@ -122,13 +122,15 @@
 
 
         @media (max-width: 1080px) {
-    html, body {
-        width: 100%;
-        height: 100%;
-        margin: 0;
-        padding: 0;
-        overflow-x: hidden;
-    }
+            html, body {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column; /* Stack children vertically */
+}
 
     body {
         display: flex;
@@ -268,24 +270,25 @@
     .contact-info ul li {
         margin-bottom: 0.5rem;
     }
-
-    .footer {
-        background-color: #f8f8f8;
-        padding: 1rem;
-        width: 100%;
-        box-sizing: border-box;
-        margin-top: auto;
-        position: relative;
-    }
-
-    footer p {
-        font-size: 1rem;
-        margin: 0;
-        color: #000000;
-    }
+    
+    .main-content {
+    flex: 1; /* Allow main content to grow and push footer down */
 }
 
+    .footer {
+    background-color: #f8f8f8; /* Light gray background color */
+    padding: 1rem; /* Padding around the footer */
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width calculation */
+    text-align: center; /* Center align the text */
+}
 
+.footer p {
+    font-size: 1rem; /* Font size for the footer text */
+    margin: 0; /* Remove default margin */
+    color: #000000; /* Text color */
+}
+}
   
     </style>
 </head>
