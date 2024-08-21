@@ -294,12 +294,13 @@ header nav ul li a {
         margin: 0 auto; /* Center the grid */
         display: grid;
         grid-template-columns: repeat(2, 1fr); /* 2 columns grid */
-        grid-template-rows: repeat(auto-fill, minmax(10%, auto)); /* Control minimum row height */
+        grid-template-rows: repeat(auto-fill, minmax(10px, auto)); /* Control minimum row height */
     gap: 10px; /* Space between items */
     }
 
     .work-showcase img {
         width: 100%;
+        height: auto;
         height: auto; /* Adjust height automatically */
         object-fit: cover; /* Ensure images fill the space without distortion */
         border-radius: 10px; /* Slight rounding of corners */
