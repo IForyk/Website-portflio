@@ -434,55 +434,42 @@ footer {
     transition: opacity 0.3s ease;
 }
 .focus-section {
-    position: absolute;
-    align-items: center;
-    max-width: 100%; /* Center and limit width */
-    margin: 50% auto; /* Centered horizontally */
-    padding: 20%;
-    background-color: #d4d4d4c0; /* White background */
-    border-radius: 20;
+    max-width: 90%; /* Limit width for smaller screens */
+    margin: 50px auto; /* Centered horizontally with adjusted margins */
+    padding: 20px;
+    background-color: #d4d4d4c0; 
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Center text */
+    text-align: center; 
     z-index: 2;
 }
 
-.focus-title {
-    margin-bottom: 40px; /* Space below the title */
-}
-
-.focus-title h1 {
-    font-size: 36px;
-    color: #333;
-    margin: 0;
-}
-
 .focus-container {
-    display: flex; /* Flexbox for layout */
-    justify-content: space-between; /* Space between items */
-    gap: 30px; /* Space between items */
-    padding: 20px;
-    border-radius: 30px;
+    display: flex;
+    flex-direction: column; /* Stack items vertically */
+    gap: 20px; /* Space between items */
 }
 
 .focus-item {
-    flex: 1; /* Each item takes up equal space */
-    background-color: #ffffffbe; /* Light background for contrast */
-    padding: 10%;
-    border-radius: 10%;
+    background-color: #ffffffbe; 
+    padding: 20px;
+    border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text */
 }
 
 .focus-item h2 {
-    font-size: 3rem;
+    font-size: 24px;
     color: #333;
-    margin-bottom: 10%;
+    margin-bottom: 10px;
 }
 
 .focus-item p {
-    font-size: 3rem;
+    font-size: 18px;
     color: #666;
     line-height: 1.3;
 }
+
 
     canvas {
         height: 15vh; /* Adjust height for mobile */
