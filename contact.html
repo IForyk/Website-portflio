@@ -200,32 +200,34 @@
         opacity: 1;
         transform: translateX(0);
     }
-    header nav {
-        display: none; /* Hide default nav menu */
-        width: 100%; /* Full width for mobile */
-        margin: 0;
-        position: static;
-        box-shadow: none;
-        background-color: #dfdfdf;
-    }
 
     header nav ul {
-        display: block; /* Stack nav items vertically */
-        width: 100%; /* Full width */
+        list-style: none; /* Remove default list styles */
+        padding: 0; /* Remove default padding */
+        margin: 0; /* Remove default margin */
+        display: flex;
+        flex-direction: column; /* Stack links vertically */
     }
 
     header nav ul li {
-        border-bottom: 1px solid #000000; /* Add border between items */
+        border-bottom: 1px solid #000000;
+        margin: 0; /* Remove margin to reduce gaps */
+        padding: 0; /* Remove padding to reduce gaps */
     }
 
     header nav ul li a {
         display: block;
-        padding: 1rem;
+        padding: 0.75rem; /* Adjust padding as needed */
         font-size: 1.125rem;
-        color: #000000; /* Ensure the text color is black */
-        text-align: center; /* Center text */
+        color: #000000;
+        text-align: center;
+        text-decoration: none; /* Remove default underline */
+        line-height: 1; /* Ensure no extra line-height spacing */
     }
 
+    header nav ul li a:hover {
+        background-color: #f0f0f0; /* Light hover effect */
+    }
 
     .contact-page {
         padding: 1rem;
@@ -287,6 +289,7 @@
         color: #000000;
     }
 }
+
 
   
     </style>
