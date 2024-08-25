@@ -436,6 +436,27 @@ footer {
     transition: opacity 0.3s ease;
 }
 /* Container for the entire focus section */
+.focus-section {
+    position: relative;
+    max-width: 90%; 
+    margin: 20px auto; 
+    padding: 20px;
+    background-color: #ddddddd2;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    display: flex;
+    flex-direction: column; 
+    align-items: center; 
+    gap: 10px; 
+    z-index: 2;
+    box-sizing: border-box;
+
+    justify-content: center; /* Add this */
+    align-items: center;     /* Add this */
+}
+
+
+/* Flex container for the focus items */
 .focus-container {
     display: flex;
     flex-direction: row; /* Align items horizontally */
@@ -446,17 +467,6 @@ footer {
     margin: 0 auto; /* Center the container horizontally */
 }
 
-
-
-/* Flex container for the focus items */
-.focus-container {
-    display: flex; /* Use flexbox for alignment */
-    flex-direction: row; /* Align items horizontally */
-    justify-content: center; /* Center items horizontally within the container */
-    gap: 20px; /* Space between the two containers */
-    width: 100%; /* Full width of its parent */
-    margin-top: 10px; /* Reduce the gap between the main title and the containers */
-}
 
 /* Individual focus items */
 .focus-item {
