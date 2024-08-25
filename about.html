@@ -437,10 +437,8 @@ footer {
 }
 .focus-section {
     position: relative;
-    max-width: 90%; /* Limit width to a specific size */
+    max-width: 90%; /* Limit width to 90% of the viewport */
     margin: 20px auto; /* Center horizontally */
-    margin-left: 40%; /* Move it to the right by increasing the left margin */
-    margin-right: auto; /* Adjust the right margin accordingly */
     padding: 20px;
     background-color: #ddddddd2;
     border-radius: 20px;
@@ -450,6 +448,7 @@ footer {
     align-items: center; /* Center content horizontally */
     gap: 20px; /* Space between items */
     z-index: 2;
+    transform: translateX(20%); /* Move the section to the right by 20% */
 }
 
 .focus-container {
