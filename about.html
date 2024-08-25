@@ -437,40 +437,35 @@ footer {
 }
 .focus-section {
     position: relative;
-    max-width: 90%; /* Limit width to 90% of the viewport */
+    max-width: 90%; /* Increase to provide more space */
     margin: 20px auto; /* Center horizontally */
-    padding: 5px;
+    padding: 20px; /* Add more padding for space around content */
     background-color: #ddddddd2;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center content horizontally */
-    gap: 5px; /* Space between items */
+    flex-direction: column; /* Stack items vertically within the section */
+    align-items: center; /* Center items horizontally within the section */
+    gap: 20px; /* Add space between the items in the section */
     z-index: 2;
-    left: 50%; /* Position the element 50% from the left edge */
-    transform: translateX(-50%); /* Shift it back by 50% of its own width */
 }
 
-
 .focus-container {
-    margin: 20px auto;
-    position: relative;
-    max-width: 100%; /* Ensure the container takes full width of its parent */
-    display: flex;
-    flex-direction: column; /* Stack the focus items vertically */
-    align-items: center; /* Center items horizontally */
-    gap: 20px; /* Adds space between focus items */
+    width: 100%; /* Full width of its parent */
+    display: flex; /* Use flexbox for alignment */
+    flex-direction: row; /* Align items horizontally */
+    justify-content: space-between; /* Space items apart */
+    gap: 20px; /* Space between the two containers */
 }
 
 .focus-item {
-    max-width: 100%; /* Takes full width of the container */
-    max-width: 90%; /* Limit the max width to ensure items don't stretch too much */
+    flex: 1; /* Allow items to grow equally */
+    max-width: 45%; /* Adjust width as needed */
     background-color: #ffffffbe; 
     padding: 20px;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    text-align: center; /* Centers the text inside each focus item */
+    text-align: center; /* Center text inside */
 }
 
 .focus-item h2 {
