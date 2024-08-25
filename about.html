@@ -451,10 +451,9 @@ footer {
     z-index: 2;
     box-sizing: border-box;
 
-    justify-content: center; /* Add this */
-    align-items: center;     /* Add this */
+    justify-content: center; /* Center content horizontally */
+    align-items: center;     /* Center content vertically */
 }
-
 
 /* Flex container for the focus items */
 .focus-container {
@@ -467,7 +466,6 @@ footer {
     margin: 0 auto; /* Center the container horizontally */
 }
 
-
 /* Individual focus items */
 .focus-item {
     flex: 1; /* Allow items to grow equally */
@@ -478,7 +476,6 @@ footer {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center; /* Center text inside */
 }
-
 
 /* Headings within focus items */
 .focus-item h2 {
@@ -496,15 +493,14 @@ footer {
 
 /* Mobile specific styles */
 @media only screen and (max-width: 768px) {
-    .focus-container {
-        flex-direction: column;
-        align-items: center;
-        width: 100%; /* Keep full width to avoid overflow */
+    .focus-section, .focus-container {
+        display: none; /* Hide both the section and the container on mobile */
     }
 
     .focus-item {
         max-width: 90%;
-        margin: 0 auto 20px; /* Ensure each item is centered */
+        margin: 20px auto; /* Center items horizontally */
+        display: block; /* Ensure they are displayed as block elements */
     }
 }
 
