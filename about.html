@@ -436,24 +436,16 @@ footer {
     transition: opacity 0.3s ease;
 }
 /* Container for the entire focus section */
-.focus-section {
-    position: relative;
-    max-width: 90%; 
-    margin: 20px auto; 
-    padding: 20px;
-    background-color: #ddddddd2;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.focus-container {
     display: flex;
-    flex-direction: column; 
-    align-items: center; 
-    gap: 10px; 
-    z-index: 2;
-    box-sizing: border-box;
-
-    justify-content: center; /* Add this */
-    align-items: center;     /* Add this */
+    flex-direction: row; /* Align items horizontally */
+    justify-content: center;
+    align-items: center; /* Ensure items are centered */
+    gap: 20px;
+    width: auto; /* Adjust width to auto so it doesn't stretch unnecessarily */
+    margin: 0 auto; /* Center the container horizontally */
 }
+
 
 
 /* Flex container for the focus items */
@@ -495,13 +487,14 @@ footer {
 /* Mobile specific styles */
 @media only screen and (max-width: 768px) {
     .focus-container {
-        flex-direction: column; /* Stack the focus items vertically on mobile */
-        align-items: center; /* Center items horizontally within the container */
+        flex-direction: column;
+        align-items: center;
+        width: 100%; /* Keep full width to avoid overflow */
     }
 
     .focus-item {
-        max-width: 90%; /* Make sure each item is centered and does not exceed 90% of the screen width */
-        margin-bottom: 20px; /* Add space between items */
+        max-width: 90%;
+        margin: 0 auto 20px; /* Ensure each item is centered */
     }
 }
 
