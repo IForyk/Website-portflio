@@ -435,7 +435,7 @@ footer {
     opacity: 0.8; 
     transition: opacity 0.3s ease;
 }
-/* Center the .focus-section horizontally within its parent */
+/* Container for the entire focus section */
 .focus-section {
     position: relative;
     max-width: 90%; /* Limit width to 90% of the viewport */
@@ -452,17 +452,26 @@ footer {
     box-sizing: border-box; /* Include padding and border in width */
 }
 
-/* Flex container for focus items */
+/* Flex container for the focus items */
 .focus-container {
     display: flex; /* Use flexbox for alignment */
     flex-direction: row; /* Align items horizontally */
     justify-content: center; /* Center items horizontally within the container */
-    gap: 10px; /* Reduce the space between the focus items */
+    gap: 20px; /* Space between the two containers */
     width: 100%; /* Full width of its parent */
-    margin-top: 10px; /* Adjust the gap between the text and the containers */
+    margin-top: 10px; /* Reduce the gap between the main title and the containers */
 }
 
-/* Individual focus
+/* Individual focus items */
+.focus-item {
+    flex: 1; /* Allow items to grow equally */
+    max-width: 45%; /* Ensure items do not exceed 45% of the container's width */
+    background-color: #ffffffbe; 
+    padding: 20px; /* Use consistent padding */
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center; /* Center text inside */
+}
 
 
 /* Headings within focus items */
