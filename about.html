@@ -436,11 +436,11 @@ footer {
     transition: opacity 0.3s ease;
 }
 /* Center the .focus-section horizontally within its parent */
+/* Center the .focus-section horizontally within its parent */
 .focus-section {
-    margin-right: 5%;
     position: relative;
-    align-items: center;
-    max-width: 90%; /* Limit width to 70% of the viewport */
+    max-width: 90%; /* Limit width to 90% of the viewport */
+    margin: 20px auto; /* Center horizontally with margin */
     padding: 20px;
     background-color: #ddddddd2;
     border-radius: 20px;
@@ -448,20 +448,17 @@ footer {
     display: flex;
     flex-direction: column; /* Stack elements vertically */
     align-items: center; /* Center content horizontally */
-    gap: 20px; /* Space between items */
+    gap: 10px; /* Space between items reduced */
     z-index: 2;
-    left: 50%; /* Position the element 50% from the left edge */
-    transform: translateX(-50%); /* Shift it back by 50% of its own width */
     box-sizing: border-box; /* Include padding and border in width */
 }
 
 /* Flex container for focus items */
 .focus-container {
-    max-width: fit-content;
     display: flex; /* Use flexbox for alignment */
     flex-direction: row; /* Align items horizontally */
     justify-content: center; /* Center items horizontally within the container */
-    gap: 20px; /* Space between the two containers */
+    gap: 10px; /* Reduce the space between the focus items */
     width: 100%; /* Full width of its parent */
 }
 
@@ -470,26 +467,27 @@ footer {
     flex: 1; /* Allow items to grow equally */
     max-width: 45%; /* Ensure items do not exceed 45% of the container's width */
     background-color: #ffffffbe; 
-    padding: 5%;
+    padding: 20px; /* Use a consistent padding */
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     text-align: center; /* Center text inside */
-    margin-top: 20px; /* Add top margin to move text down */
+    margin-top: 10px; /* Reduce top margin */
 }
 
 /* Headings within focus items */
 .focus-item h2 {
     font-size: 24px;
     color: #333;
-    margin: 20px 0 10px; /* Adjust margins for top and bottom spacing */
+    margin: 10px 0; /* Reduce margins for top and bottom spacing */
 }
 
 /* Paragraphs within focus items */
 .focus-item p {
-    font-size: 12px;
+    font-size: 14px; /* Slightly larger font for readability */
     color: #666;
     line-height: 1.3;
 }
+
 
     canvas {
         height: 15vh; /* Adjust height for mobile */
