@@ -438,19 +438,23 @@ footer {
 /* Container for the entire focus section */
 .focus-section {
     position: relative;
-    max-width: 90%; /* Limit width to 90% of the viewport */
-    margin: 20px auto; /* Center horizontally with margin */
+    max-width: 90%; 
+    margin: 20px auto; 
     padding: 20px;
     background-color: #ddddddd2;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     display: flex;
-    flex-direction: column; /* Stack elements vertically */
-    align-items: center; /* Center content horizontally */
-    gap: 10px; /* Space between items reduced */
+    flex-direction: column; 
+    align-items: center; 
+    gap: 10px; 
     z-index: 2;
-    box-sizing: border-box; /* Include padding and border in width */
+    box-sizing: border-box;
+
+    justify-content: center; /* Add this */
+    align-items: center;     /* Add this */
 }
+
 
 /* Flex container for the focus items */
 .focus-container {
