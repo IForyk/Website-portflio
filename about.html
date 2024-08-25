@@ -488,6 +488,19 @@ footer {
     line-height: 1.3;
 }
 
+/* Mobile specific styles */
+@media only screen and (max-width: 768px) {
+    .focus-container {
+        flex-direction: column; /* Stack the focus items vertically on mobile */
+        align-items: center; /* Center items horizontally within the container */
+    }
+
+    .focus-item {
+        max-width: 90%; /* Make sure each item is centered and does not exceed 90% of the screen width */
+        margin-bottom: 20px; /* Add space between items */
+    }
+}
+
 
     canvas {
         height: 15vh; /* Adjust height for mobile */
