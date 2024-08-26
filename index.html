@@ -544,14 +544,15 @@ header nav ul li a {
     display: flex;
     flex-direction: column; /* Stack text and image vertically */
     width: 80%; /* Adjust width as needed */
-    margin-top: -200px; /* Move it up by adjusting this value */
-    margin-left: 50%; /* Move it right by adjusting this value */
+    margin: 0 auto; /* Center horizontally with auto margins */
     padding: 1.25rem; /* Consistent padding */
     background-color: #f8f8f8; /* Background color */
     border-radius: 1.25rem; /* Consistent border-radius */
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Consistent box-shadow */
     box-sizing: border-box; /* Include padding and border in element’s width/height */
+    transform: translateY(-200px); /* Move up by adjusting this value */
 }
+
 
 .new-section.duplicate .text-container {
     padding-right: 0; /* Adjust padding for layout */
