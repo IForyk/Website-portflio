@@ -568,12 +568,17 @@ header nav ul li a {
     border-radius: 1rem; /* Add border radius if needed */
 }
 
-    .work-showcase {
-        grid-template-columns: 1fr; /* Stack images vertically on small screens */
-        gap: 5%; /* Adjust gap for mobile */
-        top: auto; /* Reset top position */
-        transform: none; /* Reset transform */
-    }
+.work-showcase {
+            position: absolute;
+            top: 3900px; /* Adjust this value as needed to place below the flower image */
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80%; /* Adjust width as needed */
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* Responsive grid */
+            gap: 50px;
+            z-index: 1; /* Ensure the images are above the canvas */
+        }
 
     .work-showcase img {
         height: auto; /* Adjust image height for mobile */
