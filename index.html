@@ -416,7 +416,7 @@ header nav ul li a {
         font-size: 1.125rem;
         color: #000000; /* Ensure the text color is black */
         text-align: center; /* Center text */
-
+        
     }
     .overlay-text {
     position: absolute; /* Change to absolute positioning for precise control */
@@ -515,79 +515,44 @@ header nav ul li a {
     }
 
     .new-section {
-    display: flex; /* Use flexbox layout */
-    align-items: center; /* Center items vertically */
-    justify-content: space-between; /* Space items evenly */
-    margin: 60px auto; /* Center horizontally with auto margins */
-    padding: 40px;
-    width: 80%; /* Adjust width as needed */
-    background-color: #f8f8f8;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 1700px;
-}
+        flex-direction: column; /* Stack text and image vertically */
+        width: 90%; /* Adjust width for mobile */
+        margin-top: 20%; /* Adjust margin for better spacing */
+        padding: 1.25rem; /* Adjusted to rem for consistency */
+        background-color: #f8f8f8; /* Maintain background color */
+        border-radius: 1.25rem; /* Adjusted to rem for consistency */
+        box-shadow: 0 0.25rem 0.5rem rgb(255, 255, 255); /* Adjusted to rem for consistency */
+    }
 
+    .new-section h2 {
+        font-size: 2.5rem; /* Adjusted to rem for consistency */
+    }
 
-.text-container {
-    flex: 1; /* Take up available space */
-    padding-right: 20px; /* Space between text and image */
-    display: flex; /* Flexbox for vertical alignment */
-    flex-direction: column; /* Stack text elements vertically */
-    justify-content: center; /* Center text vertically */
-    margin-top: -20px;
-}
+    .new-section p {
+        font-size: 2rem; /* Adjusted to rem for consistency */
+    }
 
-.new-section h2 {
-    margin-top: -20px;
-    font-size: 48px;
-    color: #333;
-    margin-bottom: 10px;
-}
+    .new-section.duplicate {
+        margin-top: 20%; /* Adjust margin for better spacing */
+        width: 90%; /* Adjust width for mobile */
+        background-color: #f8f8f8; /* Maintain background color */
+        border-radius: 1.25rem; /* Adjusted to rem for consistency */
+        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Adjusted to rem for consistency */
+    }
 
-.new-section p {
-    font-size: 36px;
-    color: #666;
-    line-height: 1.3;
-}
+    .new-section.duplicate .text-container {
+        padding-right: 0; /* Adjust padding for mobile */
+    }
 
-.image-container {
-    flex: 1; /* Take up available space */
-}
+    .new-section.duplicate .image-container {
+        flex: 1; /* Maintain flex settings */
+    }
 
-.image-container img {
-    width: 100%; /* Full width of the container */
-    height: auto; /* Maintain aspect ratio */
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-.new-section.duplicate {
-    position: absolute;
-    top: 2200px; /* Adjust this value to position the duplicate section correctly */
-    right: 150px;
-    margin: 60px auto;
-    padding: 40px;
-    width: 80%;
-    background-color: #f8f8f8;
-    border-radius: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
+    .new-section.duplicate .image-container img {
+        width: 100%; /* Adjust image width for mobile */
+        height: auto; /* Maintain aspect ratio */
+    }
 
-/* Ensure the text container alignment is consistent */
-.new-section.duplicate .text-container {
-    padding-right: 20px;
-}
-
-/* Ensure the image container alignment is consistent */
-.new-section.duplicate .image-container {
-    flex: 1;
-}
-
-.new-section.duplicate .image-container img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
     .work-showcase {
         grid-template-columns: 1fr; /* Stack images vertically on small screens */
         gap: 5%; /* Adjust gap for mobile */
