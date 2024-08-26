@@ -541,12 +541,15 @@ header nav ul li a {
 
 
     .new-section.duplicate {
-        margin-top: 20%; /* Adjust margin for better spacing */
-        width: 90%; /* Adjust width for mobile */
-        background-color: #f8f8f8; /* Maintain background color */
-        border-radius: 1.25rem; /* Adjusted to rem for consistency */
-        box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Adjusted to rem for consistency */
-    }
+        display: flex; /* Ensure flexbox is used for layout */
+    flex-direction: column; /* Stack text and image vertically */
+    width: 80%; /* Adjust width for mobile */
+    margin: 700px auto; /* Adjusted margin to move section down, centered horizontally */
+    padding: 1.25rem; /* Consistent padding */
+    background-color: #f8f8f8; /* Background color */
+    border-radius: 1.25rem; /* Consistent border-radius */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Consistent box-shadow */
+}
 
     .new-section.duplicate .text-container {
         padding-right: 0; /* Adjust padding for mobile */
