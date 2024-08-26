@@ -540,20 +540,21 @@ header nav ul li a {
 }
 
 .new-section.duplicate {
-    display: flex; /* Ensure flexbox is used for layout */
+    display: flex; /* Flexbox layout */
     flex-direction: column; /* Stack text and image vertically */
     width: 80%; /* Adjust width as needed */
-    margin: 100px auto; /* Center horizontally and move section down (reduced to prevent too much spacing) */
+    max-width: 1200px; /* Optional: Set a maximum width to prevent it from getting too wide */
+    margin: 0 auto; /* Center horizontally */
     padding: 1.25rem; /* Consistent padding */
     background-color: #f8f8f8; /* Background color */
     border-radius: 1.25rem; /* Consistent border-radius */
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Consistent box-shadow */
-    box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
+    box-sizing: border-box; /* Include padding and border in the element's total width and height */
+    /* Remove margin-top to prevent excessive vertical spacing */
 }
 
 .new-section.duplicate .text-container {
     padding-right: 0; /* Adjust padding for layout */
-    /* Add any additional styling if needed */
 }
 
 .new-section.duplicate .image-container {
@@ -565,6 +566,15 @@ header nav ul li a {
     height: auto; /* Maintain aspect ratio */
     border-radius: 1rem; /* Add border radius if needed */
 }
+
+.parent-container {
+    display: flex;
+    justify-content: center; /* Center child elements horizontally */
+    align-items: center; /* Center child elements vertically, if necessary */
+    width: 100%; /* Ensure full width for centering */
+    height: 100vh; /* Optional: full viewport height if centering vertically */
+}
+
 
     .work-showcase {
         grid-template-columns: 1fr; /* Stack images vertically on small screens */
