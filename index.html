@@ -540,6 +540,7 @@ header nav ul li a {
 }
 
 .new-section.duplicate {
+    position: relative;
     display: flex;
     flex-direction: column; /* Stack text and image vertically */
     width: 80%; /* Adjust width as needed */
@@ -566,17 +567,6 @@ header nav ul li a {
     height: auto; /* Maintain aspect ratio */
     border-radius: 1rem; /* Add border radius if needed */
 }
-
-.parent-container {
-    display: flex;
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically, if needed */
-    width: 100%; /* Full width of the viewport */
-    min-height: 100vh; /* Full viewport height for vertical centering */
-    padding: 0 1rem; /* Optional: Adjust padding to ensure the child is not too close to edges */
-    box-sizing: border-box; /* Include padding in width/height calculations */
-}
-
 
     .work-showcase {
         grid-template-columns: 1fr; /* Stack images vertically on small screens */
