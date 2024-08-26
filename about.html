@@ -385,11 +385,14 @@ footer {
     z-index: 2;
 }
 
-.about-me-section img {
-    max-width: 100%; /* Make image responsive */
-    height: auto;
-    border-radius: 10px;
-}
+.about-me-image { /* Assuming the image has a class like this */
+        width: 100%; /* Make the image take the full width */
+        height: auto; /* Ensure the height scales correctly */
+        max-height: 300px; /* Limit the height to crop the bottom */
+        object-fit: cover; /* Crop the image to fit within the given height */
+        object-position: top; /* Align the image to the top to focus on the upper part */
+        border-radius: 10px;
+    }
 
 .about-me-section div {
     text-align: center; /* Center text within the div */
