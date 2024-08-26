@@ -540,29 +540,33 @@ header nav ul li a {
 }
 
 
-    .new-section.duplicate {
-        display: flex; /* Ensure flexbox is used for layout */
+.new-section.duplicate {
+    display: flex; /* Ensure flexbox is used for layout */
     flex-direction: column; /* Stack text and image vertically */
-    width: 80%; /* Adjust width for mobile */
-    margin: 700px auto; /* Adjusted margin to move section down, centered horizontally */
+    width: 80%; /* Adjust width as needed */
+    margin: 400px auto; /* Center horizontally and move section down */
     padding: 1.25rem; /* Consistent padding */
     background-color: #f8f8f8; /* Background color */
     border-radius: 1.25rem; /* Consistent border-radius */
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Consistent box-shadow */
+    /* Ensure this section is not affected by any other margin/padding that might cause misalignment */
 }
 
-    .new-section.duplicate .text-container {
-        padding-right: 0; /* Adjust padding for mobile */
-    }
+.new-section.duplicate .text-container {
+    padding-right: 0; /* Adjust padding for layout */
+    /* Add any additional styling if needed */
+}
 
-    .new-section.duplicate .image-container {
-        flex: 1; /* Maintain flex settings */
-    }
+.new-section.duplicate .image-container {
+    flex: 1; /* Maintain flex settings */
+}
 
-    .new-section.duplicate .image-container img {
-        width: 100%; /* Adjust image width for mobile */
-        height: auto; /* Maintain aspect ratio */
-    }
+.new-section.duplicate .image-container img {
+    width: 100%; /* Adjust image width for layout */
+    height: auto; /* Maintain aspect ratio */
+    border-radius: 1rem; /* Add border radius if needed */
+}
+
 
     .work-showcase {
         grid-template-columns: 1fr; /* Stack images vertically on small screens */
