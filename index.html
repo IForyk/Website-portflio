@@ -524,9 +524,9 @@ header nav ul li a {
     background-color: #f8f8f8;
     border-radius: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    margin-top: 1700px;
+    /* Remove large top margin to position correctly */
+    /* margin-top: 1700px; */
 }
-
 
 .text-container {
     flex: 1; /* Take up available space */
@@ -534,20 +534,20 @@ header nav ul li a {
     display: flex; /* Flexbox for vertical alignment */
     flex-direction: column; /* Stack text elements vertically */
     justify-content: center; /* Center text vertically */
-    margin-top: -20px;
 }
 
 .new-section h2 {
-    margin-top: -20px;
-    font-size: 48px;
+    font-size: 48px; /* Font size for heading */
     color: #333;
-    margin-bottom: 10px;
+    margin: 0; /* Remove margin if it causes spacing issues */
+    margin-bottom: 10px; /* Space below the heading */
 }
 
 .new-section p {
-    font-size: 36px;
+    font-size: 36px; /* Font size for paragraph */
     color: #666;
     line-height: 1.3;
+    margin: 0; /* Remove margin if it causes spacing issues */
 }
 
 .image-container {
@@ -560,6 +560,7 @@ header nav ul li a {
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 .new-section.duplicate {
     position: absolute;
     top: 2200px; /* Adjust this value to position the duplicate section correctly */
