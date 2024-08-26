@@ -446,7 +446,7 @@ header nav ul li a {
 }
 .cube-text {
     position: absolute;
-    top: 20vh; /* Position from the top of the viewport */
+    top: 40vh; /* Moved down from 20vh to 40vh */
     left: 0;
     right: 0;
     margin: auto;
@@ -455,28 +455,30 @@ header nav ul li a {
     color: #000000;
     font-weight: bold;
     font-family: 'Poiret One', sans-serif;
-    z-index: 10; /* Increase z-index to ensure it's above other elements */
+    z-index: 10;
     
-    /* Responsive font size */
-    font-size: clamp(1.5rem, 4vw, 3rem);
+    /* Smaller font size */
+    font-size: clamp(1rem, 3vw, 2rem); /* Reduced from 1.5rem, 4vw, 3rem */
 }
 
 .cube-text p {
-    margin: 0 0 1rem 0; /* Add some bottom margin between paragraphs */
+    margin: 0 0 0.5rem 0; /* Reduced bottom margin */
     line-height: 1.3;
 }
 
 /* Media query for mobile devices */
-@media (max-width: 1000px) {
+@media (max-width: 768px) {
     .cube-text {
-        top: 15vh; /* Adjust top position for mobile */
+        top: 35vh; /* Adjusted for mobile */
         width: 95%;
-        font-size: clamp(1.2rem, 5vw, 2rem);
+        font-size: clamp(0.8rem, 4vw, 1.5rem); /* Further reduced for mobile */
     }
     
     .cube-text p {
         line-height: 1.4;
+        margin-bottom: 0.3rem; /* Smaller margin for mobile */
     }
+}
 
     .hamburger-menu {
         display: block; /* Show hamburger menu button */
