@@ -539,17 +539,16 @@ header nav ul li a {
     margin-bottom: 0; /* Remove bottom margin if needed */
 }
 
-
 .new-section.duplicate {
     display: flex; /* Ensure flexbox is used for layout */
     flex-direction: column; /* Stack text and image vertically */
     width: 80%; /* Adjust width as needed */
-    margin: 400px auto; /* Center horizontally and move section down */
+    margin: 100px auto; /* Center horizontally and move section down (reduced to prevent too much spacing) */
     padding: 1.25rem; /* Consistent padding */
     background-color: #f8f8f8; /* Background color */
     border-radius: 1.25rem; /* Consistent border-radius */
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Consistent box-shadow */
-    /* Ensure this section is not affected by any other margin/padding that might cause misalignment */
+    box-sizing: border-box; /* Ensure padding and border are included in element's total width and height */
 }
 
 .new-section.duplicate .text-container {
@@ -566,7 +565,6 @@ header nav ul li a {
     height: auto; /* Maintain aspect ratio */
     border-radius: 1rem; /* Add border radius if needed */
 }
-
 
     .work-showcase {
         grid-template-columns: 1fr; /* Stack images vertically on small screens */
