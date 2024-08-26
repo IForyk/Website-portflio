@@ -540,18 +540,19 @@ header nav ul li a {
 }
 
 .new-section.duplicate {
-    display: flex; /* Flexbox layout */
+    display: flex;
     flex-direction: column; /* Stack text and image vertically */
     width: 80%; /* Adjust width as needed */
-    max-width: 1200px; /* Optional: Set a maximum width to prevent it from getting too wide */
-    margin: 0 auto; /* Center horizontally */
+    max-width: 1200px; /* Optional: Limit maximum width */
+    margin: 0; /* Remove margin if you want to ensure full centering within the parent */
     padding: 1.25rem; /* Consistent padding */
     background-color: #f8f8f8; /* Background color */
     border-radius: 1.25rem; /* Consistent border-radius */
     box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Consistent box-shadow */
-    box-sizing: border-box; /* Include padding and border in the element's total width and height */
-    /* Remove margin-top to prevent excessive vertical spacing */
+    box-sizing: border-box; /* Include padding and border in element’s width/height */
+    /* No additional margin or positioning needed here */
 }
+
 
 .new-section.duplicate .text-container {
     padding-right: 0; /* Adjust padding for layout */
@@ -569,10 +570,12 @@ header nav ul li a {
 
 .parent-container {
     display: flex;
-    justify-content: center; /* Center child elements horizontally */
-    align-items: center; /* Center child elements vertically, if necessary */
-    width: 100%; /* Ensure full width for centering */
-    height: 100vh; /* Optional: full viewport height if centering vertically */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically, if needed */
+    width: 100%; /* Full width of the viewport */
+    min-height: 100vh; /* Full viewport height for vertical centering */
+    padding: 0 1rem; /* Optional: Adjust padding to ensure the child is not too close to edges */
+    box-sizing: border-box; /* Include padding in width/height calculations */
 }
 
 
