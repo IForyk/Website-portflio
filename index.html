@@ -515,22 +515,28 @@ header nav ul li a {
     }
 
     .new-section {
-        flex-direction: column; /* Stack text and image vertically */
-        width: 90%; /* Adjust width for mobile */
-        margin-top: 20%; /* Adjust margin for better spacing */
-        padding: 1.25rem; /* Adjusted to rem for consistency */
-        background-color: #f8f8f8; /* Maintain background color */
-        border-radius: 1.25rem; /* Adjusted to rem for consistency */
-        box-shadow: 0 0.25rem 0.5rem rgb(255, 255, 255); /* Adjusted to rem for consistency */
-    }
+    display: flex; /* Ensure flexbox is used for layout */
+    flex-direction: column; /* Stack text and image vertically */
+    width: 90%; /* Adjust width for mobile */
+    margin: 60px auto; /* Adjusted margin to move section down, centered horizontally */
+    padding: 1.25rem; /* Consistent padding */
+    background-color: #f8f8f8; /* Background color */
+    border-radius: 1.25rem; /* Consistent border-radius */
+    box-shadow: 0 0.25rem 0.5rem rgba(0, 0, 0, 0.1); /* Consistent box-shadow */
+}
 
-    .new-section h2 {
-        font-size: 2.5rem; /* Adjusted to rem for consistency */
-    }
+.new-section h2 {
+    font-size: 2rem; /* Reduced font size for heading */
+    margin-top: 0; /* Remove any additional top margin if needed */
+    margin-bottom: 0.5rem; /* Adjust bottom margin for spacing */
+}
 
-    .new-section p {
-        font-size: 2rem; /* Adjusted to rem for consistency */
-    }
+.new-section p {
+    font-size: 1.5rem; /* Reduced font size for paragraph */
+    margin-top: 0; /* Remove any additional top margin if needed */
+    margin-bottom: 0; /* Remove bottom margin if needed */
+}
+
 
     .new-section.duplicate {
         margin-top: 20%; /* Adjust margin for better spacing */
