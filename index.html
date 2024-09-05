@@ -342,26 +342,31 @@ header nav ul li a {
     display: inline-block; /* Ensures the heading doesn't stretch the full width */
     z-index: 3; /* This z-index is unnecessary for the h1 unless it's positioned */
 }
+/* Container for the button */
+.see-more-container {
+    text-align: center; /* Center the button horizontally */
+    margin-bottom: 20px; /* Add some space before the footer */
+}
+
+/* Button styles */
 .see-more {
-    display: inline-block; /* Ensure it behaves like a button */
-    padding: 10px 20px; /* Add some padding for the button */
-    background-color: #000000; /* Background color for the button */
-    color: #ffffff; /* Text color */
-    text-align: center; /* Center the text */
-    text-decoration: none; /* Remove the underline */
-    font-size: 1rem; /* Adjust the font size */
+    display: inline-block; /* Ensure the button behaves like a button */
+    padding: 10px 20px; /* Add padding for the button */
+    background-color: #000000; /* Button background color */
+    color: #ffffff; /* Button text color */
+    text-align: center; /* Centers the text */
+    text-decoration: none; /* Remove underline */
+    font-size: 1rem; /* Adjust font size */
     border-radius: 5px; /* Rounded corners */
     transition: background-color 0.3s ease; /* Smooth transition on hover */
-    margin-top: 10px;
-    margin-bottom: 10px;
-    z-index: 6;
     cursor: pointer; /* Make it look clickable */
 }
 
-/* Optional: Add hover effect */
+/* Optional hover effect */
 .see-more:hover {
     background-color: #333333; /* Darker background on hover */
 }
+
 /* Mobile Styles */
 @media (max-width: 1080px) {
     /* Ensure body and html have full height */
@@ -782,8 +787,8 @@ header nav ul li a {
             <img src="flower.jpg" alt="Work 6 Description">
             <!-- Add more images as needed -->
         </div>
-        <div class="see-more">
-            <a href="portfolio.html">View More</a>
+        <div class="see-more-container">
+            <a href="portfolio.html" class="see-more">View More</a>
         </div>
         <div class="overlay-text">
             <span class="text-top">Fory</span>
