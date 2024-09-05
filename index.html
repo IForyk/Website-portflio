@@ -342,9 +342,7 @@ header nav ul li a {
     z-index: 2; /* Ensure it's above any other elements */
     padding-bottom: 50px;
 }
-.parent-container {
-    padding-bottom: 100px; /* Add space at the bottom */
-}
+
 /* Styling for the button */
 .see-more {
     display: inline-block;
@@ -716,6 +714,11 @@ footer {
 .see-more:hover {
     background-color: #333333;
 }
+.parent-container {
+    padding-bottom: 100px; /* Adds extra space below the "View More" button */
+    position: relative; /* Keep the position relative if necessary */
+}
+
 
 /* Ensure there's no excessive margin in footer or other elements */
 .footer {
@@ -830,9 +833,12 @@ footer {
             <span class="text-top">Fory</span>
             <span class="text-bottom">Studio</span>
         </div>
-        <div class="see-more-container">
-            <a href="portfolio.html" class="see-more">View More</a>
+        <div class="parent-container">
+            <div class="see-more-container">
+                <a href="portfolio.html" class="see-more">View More</a>
+            </div>
         </div>
+        
         <footer>
             <p>&copy; 2024 Fory Studio. All Rights Reserved.</p>
         </footer>
