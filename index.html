@@ -331,6 +331,14 @@ header nav ul li a {
     display: inline-block; /* Ensures the heading doesn't stretch the full width */
     z-index: 3; /* This z-index is unnecessary for the h1 unless it's positioned */
 }
+
+.main-content {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Full viewport height */
+    justify-content: flex-start; /* Align items at the start */
+}
+
 /* Container for the button */
 .see-more-container {
     text-align: center; /* Center the button horizontally */
